@@ -31,3 +31,11 @@ require __DIR__.'/auth.php';
 Route::get('User',[VolumeHoraireController::class ,'UserIndex'])->name('UserIndex');
 Route::get('UserRegister',[VolumeHoraireController::class,'Create'])->name('CreateUser');
 Route::post('Register',[VolumeHoraireController::class,'CreateUser'])->name('Register');
+
+
+
+// les differntes routes pour la creation des etablissement
+
+Route::get('Etablissement',[VolumeHoraireController::class ,'Etablissement'])->name('etablissement');
+// Route::get('UserRegister',[VolumeHoraireController::class,'Create'])->name('CreateUser');
+Route::post('EtablissementRegister',[VolumeHoraireController::class,'EtablissementRegiste'])->name('EtablissementRegiste');

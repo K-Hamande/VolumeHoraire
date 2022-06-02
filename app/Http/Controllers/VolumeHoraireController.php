@@ -53,4 +53,14 @@ class VolumeHoraireController extends Controller
         return view('UserRegister');
     } 
 
+
+
+    // Etablissement 
+
+    public function Etablissement()
+    {
+        return view('
+        ')
+    }
+
 }

@@ -20,13 +20,13 @@
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
-                        <a class="has-arrow" href="{{(Route('CreateUser'))}}" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Inscription</span>
+                        <a class="has-arrow"" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Parametrage</span>
                         </a>
-                        {{-- <ul aria-expanded="false">
-                            <li><a href="./layout-blank.html">Blank</a></li>
-                            <li><a href="./layout-one-column.html">One Column</a></li>
-                            <li><a href="./layout-two-column.html">Two column</a></li>
+                        <ul aria-expanded="false">
+                            <li><a href="{{Route('CreateUser')}}">Utilisateur</a></li>
+                            <li><a href="{{Route('etablissement')}}">Etablissement</a></li>
+                            {{-- <li><a href="./layout-two-column.html">Two column</a></li>
                             <li><a href="./layout-compact-nav.html">Compact Nav</a></li>
                             <li><a href="./layout-vertical.html">Vertical</a></li>
                             <li><a href="./layout-horizontal.html">Horizontal</a></li>
@@ -35,8 +35,8 @@
                             
                             
                             <li><a href="./layout-fixed-header.html">Fixed Header</a></li>
-                            <li><a href="layout-fixed-sidebar.html">Fixed Sidebar</a></li>
-                        </ul> --}}
+                            <li><a href="layout-fixed-sidebar.html">Fixed Sidebar</a></li> --}}
+                        </ul>
                     </li>
                     <li class="nav-label">Apps</li>
                     <li>

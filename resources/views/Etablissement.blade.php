@@ -68,7 +68,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{ Route('Register') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                        <form action="{{ Route('EtablissementRegister') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
                             @csrf
                             <div>
                                 <section>
@@ -91,30 +91,6 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <input type="text" name="pseudo" class="form-control" placeholder="Nom d'Utilisateur" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                                <section>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="email" name="email" class="form-control" placeholder="Email" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="text" name="" class="form-control" placeholder=" ">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="password" name="password" class="form-control" placeholder="Mot de passe " required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="password" name="confirmPassword" class="form-control" placeholder="Confirmation du mot de passe" required>
                                             </div>
                                         </div>
                                     </div>
