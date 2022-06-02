@@ -58,9 +58,13 @@ class VolumeHoraireController extends Controller
     // Etablissement 
 
     public function Etablissement()
+        {
+            return view('Etablissement');
+        }
+
+    public function EtablissementRegiste(Request $request)
     {
-        return view('
-        ')
+        return view('Etablissement');
     }
 
 }
