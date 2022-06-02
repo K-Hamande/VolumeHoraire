@@ -15,8 +15,8 @@ class VolumeHoraireController extends Controller
     
     public function UserIndex()
     {
-        $User  = User::all();
-        return view('UserIndex',compact('User'));
+        $AllUsers  = User::all();
+        return view('UserIndex',compact('AllUsers'));
     }
 
     public function CreateUser(Request $request)

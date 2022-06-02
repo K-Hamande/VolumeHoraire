@@ -144,7 +144,7 @@
                                         </div>
                                     </div>
                                 </section>
-                                {{-- <section>
+                                <section>
                                     <div class="row">
 
                                         <div class="col-lg-6">
@@ -167,7 +167,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </section> --}}
+                                </section> 
                                 <div>
 
                                     <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 50%">ENREGISTRER</button>
