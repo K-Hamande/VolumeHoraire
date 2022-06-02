@@ -23,7 +23,6 @@ class VolumeHoraireController extends Controller
     {
         
     $Users = new User;
-    $Users->roles()->attach($request->cats);
     $Users->name = $request->name;
     $Users->prenom = $request->prenom;
     $Users->email = $request->email;
@@ -41,6 +40,7 @@ class VolumeHoraireController extends Controller
 
     $Role = new Role();
     $Role->intituleRole = $request->intituleRole;
+    dd($Users->roles()->sync($Users));
     $Role->save();
     $Users->save();
        
@@ -53,18 +53,5 @@ class VolumeHoraireController extends Controller
         return view('UserRegister');
     } 
 
-
-
-    // Etablissement 
-
-    public function Etablissement()
-        {
-            return view('Etablissement');
-        }
-
-    public function EtablissementRegiste(Request $request)
-    {
-        return view('Etablissement');
-    }
 
 }

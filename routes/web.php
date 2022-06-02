@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EtablissementController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GestionUtilisateurController;
@@ -36,6 +37,16 @@ Route::post('Register',[VolumeHoraireController::class,'CreateUser'])->name('Reg
 
 // les differntes routes pour la creation des etablissement
 
-Route::get('Etablissement',[VolumeHoraireController::class ,'Etablissement'])->name('etablissement');
-// Route::get('UserRegister',[VolumeHoraireController::class,'Create'])->name('CreateUser');
-Route::post('EtablissementRegister',[VolumeHoraireController::class,'EtablissementRegiste'])->name('EtablissementRegiste');
+                    // ============ UFR===============
+Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
+Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
+// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+Route::post('EtablissementRegister',[EtablissementController::class,'EtablissementRegister'])->name('EtablissementRegister');
+
+
+
+                    // ============ Departement===============
+Route::get('Departement',[EtablissementController::class ,'Departement'])->name('departement');
+//Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
+// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+Route::post('DepartementRegister',[EtablissementController::class,'DepartementRegister'])->name('DepartementRegister');
