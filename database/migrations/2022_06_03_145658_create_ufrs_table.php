@@ -15,10 +15,6 @@ return new class extends Migration
     {
         Schema::create('ufrs', function (Blueprint $table) {
             $table->id();
-            $table->string('intituleUfr');
-            $table->string('sigle')->nullable();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('departement_id')->constrained();
             $table->timestamps();
         });
     }

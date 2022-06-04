@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\EtablissementController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\EtablissementController;
 use App\Http\Controllers\GestionUtilisateurController;
-use App\Http\Controllers\VolumeHoraireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ use App\Http\Controllers\VolumeHoraireController;
 
 Route::get('/', function () {
     $User = User::all();
-    return view('dashboard',compact('User'));
+    return view('pages.dashboard',compact('User'));
 })->middleware(['auth'])->name('Accueil');
 
 require __DIR__.'/auth.php';
@@ -29,9 +29,9 @@ require __DIR__.'/auth.php';
 
 // les differntes routes pour la gestion des utilisateurs
 
-Route::get('User',[VolumeHoraireController::class ,'UserIndex'])->name('UserIndex');
-Route::get('UserRegister',[VolumeHoraireController::class,'Create'])->name('CreateUser');
-Route::post('Register',[VolumeHoraireController::class,'CreateUser'])->name('Register');
+Route::get('User',[UserController::class ,'UserIndex'])->name('UserIndex');
+Route::get('UserRegister',[UserController::class,'Create'])->name('CreateUser');
+Route::post('Register',[UserController::class,'CreateUser'])->name('Register');
 
 
 
@@ -50,3 +50,36 @@ Route::get('Departement',[EtablissementController::class ,'Departement'])->name(
 //Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
 // Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
 Route::post('DepartementRegister',[EtablissementController::class,'DepartementRegister'])->name('DepartementRegister');
+
+
+
+
+                    // ============ Filière ===============
+Route::get('Filiere',[EtablissementController::class ,'Filiere'])->name('filiere');
+//Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
+// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+Route::post('FiliereRegister',[EtablissementController::class,'filiereRegister'])->name('filiereRegister');
+
+
+                    // ============ UE ===============
+Route::get('UE',[EtablissementController::class ,'UE'])->name('ue');
+//Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
+// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+Route::post('ueRegister',[EtablissementController::class,'UeRegister'])->name('ueRegister');
+
+
+
+                    // ============ Departement===============
+
+                    
+Route::get('Departement',[EtablissementController::class ,'Departement'])->name('departement');
+//Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
+// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+Route::post('DepartementRegister',[EtablissementController::class,'DepartementRegister'])->name('DepartementRegister');
+
+
+                    // ============ Matiere ===============
+Route::get('Matiere',[EtablissementController::class ,'Matiere'])->name('matiere');
+//Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
+// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+Route::post('MatiereRegister',[EtablissementController::class,'MatiereRegister'])->name('matiereRegister');

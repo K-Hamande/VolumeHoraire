@@ -26,19 +26,13 @@
                         <ul aria-expanded="false">
                             <li><a href="{{Route('CreateUser')}}">Utilisateur</a></li>
                             <li><a href="{{Route('etablissement')}}">Etablissement</a></li>
-                            {{-- <li><a href="./layout-two-column.html">Two column</a></li>
-                            <li><a href="./layout-compact-nav.html">Compact Nav</a></li>
-                            <li><a href="./layout-vertical.html">Vertical</a></li>
-                            <li><a href="./layout-horizontal.html">Horizontal</a></li>
-                            <li><a href="./layout-boxed.html">Boxed</a></li>
-                            <li><a href="./layout-wide.html">Wide</a></li>
-                            
-                            
-                            <li><a href="./layout-fixed-header.html">Fixed Header</a></li>
-                            <li><a href="layout-fixed-sidebar.html">Fixed Sidebar</a></li> --}}
+                            <li><a href="{{Route('departement')}}">Département</a></li>
+                            <li><a href="{{Route('filiere')}}">Filière</a></li>
+                            <li><a href="{{Route('ue')}}">UE</a></li>
+                            <li><a href="{{Route('matiere')}}">Matière</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Apps</li>
+                    {{-- <li class="nav-label">Apps</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
@@ -70,8 +64,8 @@
                             <li><a href="./chart-sparkline.html">Sparkline</a></li>
                             <li><a href="./chart-peity.html">Peity</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-label">UI Components</li>
+                    </li> --}}
+                    {{-- <li class="nav-label">UI Components</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-grid menu-icon"></i><span class="nav-text">UI Components</span>
@@ -94,8 +88,8 @@
                             <li><a href="./ui-tab.html">Tab</a></li>
                             <li><a href="./ui-typography.html">Typography</a></li>
                         <!-- </ul>
-                    </li>
-                    <li>
+                    </li> --}}
+                    {{-- <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-layers menu-icon"></i><span class="nav-text">Components</span>
                         </a>
@@ -105,13 +99,13 @@
                             <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
                             <li><a href="./uc-toastr.html">Toastr</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="widgets.html" aria-expanded="false">
-                            <i class="icon-badge menu-icon"></i><span class="nav-text">Widget</span>
-                        </a>
-                    </li>
-                    <li class="nav-label">Forms</li>
+                    </li> --}}
+                        {{-- <li>
+                            <a href="widgets.html" aria-expanded="false">
+                                <i class="icon-badge menu-icon"></i><span class="nav-text">Widget</span>
+                            </a>
+                        </li> --}}
+                    {{-- <li class="nav-label">Forms</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-note menu-icon"></i><span class="nav-text">Forms</span>
@@ -133,8 +127,8 @@
                             <li><a href="./table-basic.html" aria-expanded="false">Basic Table</a></li>
                             <li><a href="./table-datatable.html" aria-expanded="false">Data Table</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-label">Pages</li>
+                    </li> --}}
+                    {{-- <li class="nav-label">Pages</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Pages</span>
@@ -153,7 +147,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>

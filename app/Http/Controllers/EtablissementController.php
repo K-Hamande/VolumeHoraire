@@ -10,15 +10,13 @@ class EtablissementController extends Controller
 
        public function Etablissement()
        {
-           return view('Etablissement');
+           return view('pages.Etablissement');
        }
 
-   public function EtablissementRegister(Request $request)
-   {
-       return view('Etablissement');
-   }
-
-
+        public function EtablissementRegister(Request $request)
+        {
+            return view('pages.Etablissement');
+        }
 
 
 
@@ -26,12 +24,60 @@ class EtablissementController extends Controller
 
        public function Departement()
        {
-           return view('Departement');
+           return view('pages.Departement');
        }
 
-   public function DepartementRegister(Request $request)
+        public function DepartementRegister(Request $request)
+        {
+            return view('pages.Departement');
+        }
+
+
+
+   
+       // ==================== flière ===============
+
+       public function fliere()
+       {
+           return view('pages.fliere');
+       }
+
+   public function fliereRegister(Request $request)
    {
-       return view('Departement');
+       return view('pages.fliere');
    }
 
+
+
+
+       // ==================== UE ===============
+
+       public function ue()
+       {
+           return view('pages.ue');
+       }
+
+
+
+        public function ueRegister(Request $request)
+        {
+            return view('pages.ue');
+        }
+
+
+
+       // ==================== matier ===============
+
+       public function matiere()
+       {
+           return view('pages.matiere');
+       }
+
+
+
+        public function matiereRegister(Request $request)
+        {
+            return view('pages.matiere');
+        }
+    
 }

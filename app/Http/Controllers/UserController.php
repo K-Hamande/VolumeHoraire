@@ -7,16 +7,15 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class VolumeHoraireController extends Controller
+class UserController extends Controller
 {
-
-
+    
     // gestion des utilisateur
     
     public function UserIndex()
     {
         $AllUsers  = User::all();
-        return view('UserIndex',compact('AllUsers'));
+        return view('pages.UserIndex',compact('AllUsers'));
     }
 
     public function CreateUser(Request $request)
@@ -44,14 +43,12 @@ class VolumeHoraireController extends Controller
     $Role->save();
     $Users->save();
        
-        return view('UserRegister');
+        return view('pages.UserRegister');
     } 
 
     public function Create()
     {
 
-        return view('UserRegister');
-    } 
-
-
+        return view('pages.UserRegister');
+    }
 }

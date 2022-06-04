@@ -59,7 +59,7 @@
                                     </a>
                                 </div>
                                 <div class="dropdown-content-body">
-                                    <ul>
+                                    {{-- <ul>
                                         <li class="notification-unread">
                                             <a href="javascript:void()">
                                                 <img class="float-left mr-3 avatar-img" src="images/avatar/1.jpg" alt="">
@@ -101,7 +101,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    
+                                     --}}
                                 </div>
                             </div>
                         </li>
@@ -109,7 +109,7 @@
                                 <i class="mdi mdi-bell-outline"></i>
                                 <span class="badge badge-pill gradient-2">3</span>
                             </a>
-                            <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
+                           <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
                                 <div class="dropdown-content-heading d-flex justify-content-between">
                                     <span class="">2 New Notifications</span>  
                                     <a href="javascript:void()" class="d-inline-block">
@@ -117,7 +117,7 @@
                                     </a>
                                 </div>
                                 <div class="dropdown-content-body">
-                                    <ul>
+                                     <ul>
                                         <li>
                                             <a href="javascript:void()">
                                                 <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>

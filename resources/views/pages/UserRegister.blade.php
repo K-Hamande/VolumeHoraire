@@ -178,7 +178,7 @@
 
 
 
-                        <div class="card">
+                        {{-- <div class="card">
                             <div class="card-body">
                                 <div class="active-member">
                                     <div class="table-responsive">
@@ -214,10 +214,10 @@
                                                     </td>
                                                 </tr>
                                             </tbody>
-                                        </table>
+                                        </table> 
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
 
                     </div>
                 </div>
