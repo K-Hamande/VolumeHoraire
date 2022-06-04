@@ -29,9 +29,9 @@ require __DIR__.'/auth.php';
 
 // les differntes routes pour la gestion des utilisateurs
 
-Route::get('User',[UserController::class ,'UserIndex'])->name('UserIndex');
-Route::get('UserRegister',[UserController::class,'Create'])->name('CreateUser');
-Route::post('Register',[UserController::class,'CreateUser'])->name('Register');
+Route::get('User',[UserController::class ,'UserIndex'])->name('user');
+Route::get('UserRegister',[UserController::class,'Create'])->name('createUser');
+Route::post('Register',[UserController::class,'CreateUser'])->name('cegister');
 
 
 

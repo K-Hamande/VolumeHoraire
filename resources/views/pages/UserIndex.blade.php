@@ -64,11 +64,12 @@
             <!-- row -->
 
             <div class="container-fluid">
-                <h4 class="card-title">LISTE DES UTILIS</h4>
                 <div class="row">
+                    
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
+                                <h4 class="card-title" style="text-align:center " >LISTE DES UTILISATEURS </h4>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered zero-configuration">
                                         <thead>
@@ -122,11 +123,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright &copy; . . .  <a href="#">!!!</a> 2018</p>
-            </div>
-        </div>
+       @include('layouts.footer')
         <!--**********************************
             Footer end
         ***********************************-->

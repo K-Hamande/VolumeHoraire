@@ -83,7 +83,7 @@
 
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-3">
-                                <a href=" {{Route('UserIndex')}} ">
+                                <a href=" {{Route('user')}} ">
                                     <div class="card-body">
                                             <h3 class="card-title text-white">Utilisateurs</h3>
                                             <div class="d-inline-block">

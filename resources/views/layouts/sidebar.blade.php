@@ -32,7 +32,7 @@
                             <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Parametrage</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{Route('CreateUser')}}">Utilisateur</a></li>
+                            <li><a href="{{Route('createUser')}}">Utilisateur</a></li>
                             <li><a href="{{Route('etablissement')}}">Etablissement</a></li>
                             <li><a href="{{Route('departement')}}">Département</a></li>
                             <li><a href="{{Route('filiere')}}">Filière</a></li>
