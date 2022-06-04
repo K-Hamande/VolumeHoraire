@@ -75,12 +75,12 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" name="etablissement" class="form-control" placeholder="intitulé de l'établissement" required>
+                                                <input type="text" name="intitule" class="form-control" placeholder="intitulé Filière" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" name="sigle" class="form-control" placeholder="Sigle de l'établissement" >
+                                                <input type="text" name="prenom" class="form-control" placeholder="Sigle UFR" >
                                             </div>
                                         </div>
                                         <div class="col-lg-6 ">

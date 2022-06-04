@@ -37,14 +37,14 @@ class EtablissementController extends Controller
    
        // ==================== flière ===============
 
-       public function fliere()
+       public function Filiere()
        {
-           return view('pages.fliere');
+           return view('pages.filiere');
        }
 
-   public function fliereRegister(Request $request)
+   public function FiliereRegister(Request $request)
    {
-       return view('pages.fliere');
+       return view('pages.filiere');
    }
 
 
@@ -52,14 +52,14 @@ class EtablissementController extends Controller
 
        // ==================== UE ===============
 
-       public function ue()
+       public function UE()
        {
            return view('pages.ue');
        }
 
 
 
-        public function ueRegister(Request $request)
+        public function UERegister(Request $request)
         {
             return view('pages.ue');
         }
@@ -68,14 +68,14 @@ class EtablissementController extends Controller
 
        // ==================== matier ===============
 
-       public function matiere()
+       public function Matiere()
        {
            return view('pages.matiere');
        }
 
 
 
-        public function matiereRegister(Request $request)
+        public function MatiereRegister(Request $request)
         {
             return view('pages.matiere');
         }

@@ -75,22 +75,22 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" name="etablissement" class="form-control" placeholder="intitulé de l'établissement" required>
+                                                <input type="text" name="code" class="form-control" placeholder="code de la matière" required >
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" name="sigle" class="form-control" placeholder="Sigle de l'établissement" >
+                                                <input type="text" name="intitule" class="form-control" placeholder="intitulé de la matière" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 ">
                                             <div class="">
-                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">ENREGISTRER UFR</button>
+                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">ENREGISTRER LA MATIERE</button>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="">
-                                                <a href="{{ Route('departement')}}"class="btn mb-4 btn-rounded btn-info" style="width: 100%"> AJOUTER UN DEPARTEMENT </a>
+                                                <a href="{{ Route('departement')}}"class="btn mb-4 btn-rounded btn-info" style="width: 100%"> AJOUTER UNE UE </a>
                                             </div>
                                         </div>
                                     </div>

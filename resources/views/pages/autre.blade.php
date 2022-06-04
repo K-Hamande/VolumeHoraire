@@ -75,12 +75,12 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" name="etablissement" class="form-control" placeholder="intitulé de l'établissement" required>
+                                                <input type="text" name="name" class="form-control" placeholder="intitulé UFR" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" name="sigle" class="form-control" placeholder="Sigle de l'établissement" >
+                                                <input type="text" name="prenom" class="form-control" placeholder="Sigle UFR" >
                                             </div>
                                         </div>
                                         <div class="col-lg-6 ">
@@ -107,7 +107,19 @@
         <!--**********************************
             Content body end
         ***********************************-->
-    
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
     </div>
     <!--**********************************
         Main wrapper end
