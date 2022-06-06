@@ -90,7 +90,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="">
-                                                <a href="{{ Route('etablissement')}}"class="btn mb-4 btn-rounded btn-info" style="width: 100%"> AJOUTER UN UFR </a>
+                                                <a href="{{ Route('etablissement')}}"class="btn mb-4 btn-rounded btn-info" style="width: 100%"> AJOUTER UNE UFR </a>
                                             </div>
                                         </div>
                                     </div>

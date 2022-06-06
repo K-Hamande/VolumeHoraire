@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivitePedagogiqueController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -69,17 +70,18 @@ Route::post('ueRegister',[EtablissementController::class,'UeRegister'])->name('u
 
 
 
-                    // ============ Departement===============
 
-                    
-Route::get('Departement',[EtablissementController::class ,'Departement'])->name('departement');
+                    // ============ ECUE ===============
+Route::get('Ecue',[EtablissementController::class ,'Ecue'])->name('ecue');
 //Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
 // Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
-Route::post('DepartementRegister',[EtablissementController::class,'DepartementRegister'])->name('DepartementRegister');
+Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('EcueRegister');
 
 
-                    // ============ Matiere ===============
-Route::get('Matiere',[EtablissementController::class ,'Matiere'])->name('matiere');
-//Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
-// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
-Route::post('MatiereRegister',[EtablissementController::class,'MatiereRegister'])->name('matiereRegister');
+
+
+                    // ============ Formations ===============
+Route::get('Formation',[ActivitePedagogiqueController::class ,'Formation'])->name('formation');
+Route::get('AjoutFormation',[ActivitePedagogiqueController::class ,'AjoutFormation'])->name('ajoutFormation');
+// Route::get('UserRegister',[ActivitePedagogiqueController::class,'Create'])->name('CreateUser');
+//Route::post('AjoutFormation',[ActivitePedagogiqueController::class,'AjoutFormation'])->name('');

@@ -90,7 +90,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="">
-                                                <a href="{{ Route('matiere')}}"class="btn mb-4 btn-rounded btn-info" style="width: 100%"> AJOUTER UNE MATIERE </a>
+                                                <a href="{{ Route('ecue')}}"class="btn mb-4 btn-rounded btn-info" style="width: 100%"> AJOUTER UNE MATIERE </a>
                                             </div>
                                         </div>
                                     </div>

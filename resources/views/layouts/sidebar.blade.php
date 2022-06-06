@@ -4,7 +4,7 @@
                 <ul class="metismenu" id="menu">
                     
                     <li class="nav-label">
-                        <a href="{{Route('Accueil')}}"> ACCUEIL </a>
+                        <a href="{{Route('Accueil')}}"> <i class="icon-copy fa fa-dashboard" aria-hidden="true"></i> ACCUEIL </a>
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -18,12 +18,39 @@
 
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i> <span class="nav-text"> Activité Pédagogique</span>
+                            <i class="icon-copy fa fa-briefcase"></i> <span class="nav-text"> Activité Pédagogique</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./email-inbox.html">Inbox</a></li>
-                            <li><a href="./email-read.html">Read</a></li>
-                            <li><a href="./email-compose.html">Compose</a></li>
+                            <li><a href="{{Route('formation')}}">Formation</a></li>
+                            <li><a href="./email-read.html">Activité Pédagogique</a></li>
+                            {{-- <li><a href="./email-compose.html">Compose</a></li> --}}
+                        </ul>
+                    </li>
+
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow"" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Enseignants</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            {{-- <li><a href="{{Route('createUser')}}">Utilisateur</a></li>
+                            <li><a href="{{Route('etablissement')}}">Etablissement</a></li>
+                            <li><a href="{{Route('departement')}}">Département</a></li>
+                            <li><a href="{{Route('filiere')}}">Filière</a></li>
+                            <li><a href="{{Route('ue')}}">UE</a></li>
+                            <li><a href="{{Route('ecue')}}">Matière</a></li> --}}
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow"" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Délegués</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            {{-- <li><a href="{{Route('createUser')}}">Utilisateur</a></li>
+                            <li><a href="{{Route('etablissement')}}">Etablissement</a></li>
+                            <li><a href="{{Route('departement')}}">Département</a></li>
+                            <li><a href="{{Route('filiere')}}">Filière</a></li>
+                            <li><a href="{{Route('ue')}}">UE</a></li>
+                            <li><a href="{{Route('ecue')}}">Matière</a></li> --}}
                         </ul>
                     </li>
 
@@ -37,9 +64,23 @@
                             <li><a href="{{Route('departement')}}">Département</a></li>
                             <li><a href="{{Route('filiere')}}">Filière</a></li>
                             <li><a href="{{Route('ue')}}">UE</a></li>
-                            <li><a href="{{Route('matiere')}}">Matière</a></li>
+                            <li><a href="{{Route('ecue')}}">Matière</a></li>
                         </ul>
                     </li>
+
+                    {{-- <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow"" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Parametrage</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{Route('createUser')}}">Utilisateur</a></li>
+                            <li><a href="{{Route('etablissement')}}">Etablissement</a></li>
+                            <li><a href="{{Route('departement')}}">Département</a></li>
+                            <li><a href="{{Route('filiere')}}">Filière</a></li>
+                            <li><a href="{{Route('ue')}}">UE</a></li>
+                            <li><a href="{{Route('ecue')}}">Matière</a></li>
+                        </ul>
+                    </li> --}}
                    
                    
                   {{-- <li>

@@ -58,8 +58,8 @@
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{Route('Accueil')}}">Accueil</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)"></a></li>
                     </ol>
                 </div>
             </div>
@@ -75,22 +75,22 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" name="name" class="form-control" placeholder="intitulé UFR" required>
+                                                <input type="text" name="code" class="form-control" placeholder="code de l ECUE" required >
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" name="prenom" class="form-control" placeholder="Sigle UFR" >
+                                                <input type="text" name="intitule" class="form-control" placeholder="intitulé de l ECUE" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 ">
                                             <div class="">
-                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">ENREGISTRER UFR</button>
+                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">ENREGISTRER LA MATIERE</button>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="">
-                                                <a href="{{ Route('departement')}}"class="btn mb-4 btn-rounded btn-info" style="width: 100%"> AJOUTER UN DEPARTEMENT </a>
+                                                <a href="{{ Route('departement')}}"class="btn mb-4 btn-rounded btn-info" style="width: 100%"> AJOUTER UNE UE </a>
                                             </div>
                                         </div>
                                     </div>
@@ -107,19 +107,7 @@
         <!--**********************************
             Content body end
         ***********************************-->
-        
-        
-        <!--**********************************
-            Footer start
-        ***********************************-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
-            </div>
-        </div>
-        <!--**********************************
-            Footer end
-        ***********************************-->
+    
     </div>
     <!--**********************************
         Main wrapper end

@@ -66,18 +66,18 @@ class EtablissementController extends Controller
 
 
 
-       // ==================== matier ===============
+       // ==================== ECUE ===============
 
-       public function Matiere()
+       public function Ecue()
        {
-           return view('pages.matiere');
+           return view('pages.Ecue');
        }
 
 
 
-        public function MatiereRegister(Request $request)
+        public function EcueRegister(Request $request)
         {
-            return view('pages.matiere');
+            return view('pages.Ecue');
         }
     
 }
