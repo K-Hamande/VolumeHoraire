@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ActivitePedagogiqueController;
+use App\Http\Controllers\Enseignant;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -85,3 +86,13 @@ Route::get('Formation',[ActivitePedagogiqueController::class ,'Formation'])->nam
 Route::get('AjoutFormation',[ActivitePedagogiqueController::class ,'AjoutFormation'])->name('ajoutFormation');
 // Route::get('UserRegister',[ActivitePedagogiqueController::class,'Create'])->name('CreateUser');
 //Route::post('AjoutFormation',[ActivitePedagogiqueController::class,'AjoutFormation'])->name('');
+
+
+
+                    // ============ Enseigants ===============
+Route::get('Enseignant',[Enseignant::class ,'Enseignant'])->name('enseignant');
+Route::get('AddEnseignant',[Enseignant::class ,'AddEnseignant'])->name('addEnseignant');
+Route::get('ListeEnseignant',[Enseignant::class ,'ListeEnseignant'])->name('listeEnseignant');
+Route::get('EnseignantActivite',[Enseignant::class ,'EnseignantActivite'])->name('enseignantActivite');
+// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+//Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('EcueRegister');

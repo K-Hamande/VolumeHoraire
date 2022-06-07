@@ -32,12 +32,9 @@
                             <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Enseignants</span>
                         </a>
                         <ul aria-expanded="false">
-                            {{-- <li><a href="{{Route('createUser')}}">Utilisateur</a></li>
-                            <li><a href="{{Route('etablissement')}}">Etablissement</a></li>
-                            <li><a href="{{Route('departement')}}">Département</a></li>
-                            <li><a href="{{Route('filiere')}}">Filière</a></li>
-                            <li><a href="{{Route('ue')}}">UE</a></li>
-                            <li><a href="{{Route('ecue')}}">Matière</a></li> --}}
+                            <li><a href="{{Route('enseignant')}}">Ajouter un enseignant</a></li>
+                            <li><a href="{{Route('listeEnseignant')}}">liste des Enseignant</a></li>
+                            <li><a href="{{Route('enseignantActivite')}}">Activité pédagogique Ensignant</a></li>
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
