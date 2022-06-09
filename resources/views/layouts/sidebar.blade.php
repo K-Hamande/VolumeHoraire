@@ -21,8 +21,18 @@
                             <i class="icon-copy fa fa-briefcase"></i> <span class="nav-text"> Activité Pédagogique</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{Route('formation')}}">Formation</a></li>
-                            <li><a href="./email-read.html">Activité Pédagogique</a></li>
+                            <li><a a href="{{Route('nouvelleActivite')}}">Nouvelle Activité</a></li>
+                            <li><a href="{{Route('activiteProgrammer')}}">Activité Programmée</a></li>
+                            <li><a href="{{Route('activiteTerminer')}}">Activité Terminée </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-copy fa fa-briefcase"></i> <span class="nav-text"> Formation</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{Route('formation')}}">Nouvelle Formation</a></li>
+                            <li><a href=" {{Route('listeFormation')}} ">Liste des formations</a></li>
                             {{-- <li><a href="./email-compose.html">Compose</a></li> --}}
                         </ul>
                     </li>
@@ -34,7 +44,8 @@
                         <ul aria-expanded="false">
                             <li><a href="{{Route('enseignant')}}">Ajouter un enseignant</a></li>
                             <li><a href="{{Route('listeEnseignant')}}">liste des Enseignant</a></li>
-                            <li><a href="{{Route('enseignantActivite')}}">Activité pédagogique Ensignant</a></li>
+                            <li><a href="{{Route('enseignantActivite')}}">Activité En cours </a></li>
+                            <li><a href="{{Route('enseignantActivite')}}">Activité Terminée</a></li>
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
@@ -42,12 +53,8 @@
                             <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Délegués</span>
                         </a>
                         <ul aria-expanded="false">
-                            {{-- <li><a href="{{Route('createUser')}}">Utilisateur</a></li>
-                            <li><a href="{{Route('etablissement')}}">Etablissement</a></li>
-                            <li><a href="{{Route('departement')}}">Département</a></li>
-                            <li><a href="{{Route('filiere')}}">Filière</a></li>
-                            <li><a href="{{Route('ue')}}">UE</a></li>
-                            <li><a href="{{Route('ecue')}}">Matière</a></li> --}}
+                            <li><a href="{{Route('enseignantActivite')}}">Activité En cours </a></li>
+                            <li><a href="{{Route('enseignantActivite')}}">Activité Terminée</a></li>
                         </ul>
                     </li>
 

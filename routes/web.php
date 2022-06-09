@@ -33,6 +33,8 @@ require __DIR__.'/auth.php';
 
 Route::get('User',[UserController::class ,'UserIndex'])->name('user');
 Route::get('UserRegister',[UserController::class,'Create'])->name('createUser');
+Route::get('DeletUser/{id}',[UserController::class,'DeletUser'])->name('deletUser');
+Route::get('UpdatUser/{id}',[UserController::class,'UpdatUser'])->name('updatUser');
 Route::post('Register',[UserController::class,'CreateUser'])->name('cegister');
 
 
@@ -83,8 +85,23 @@ Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->nam
 
                     // ============ Formations ===============
 Route::get('Formation',[ActivitePedagogiqueController::class ,'Formation'])->name('formation');
-Route::get('AjoutFormation',[ActivitePedagogiqueController::class ,'AjoutFormation'])->name('ajoutFormation');
+Route::get('ListeFormation',[ActivitePedagogiqueController::class ,'ListeFormation'])->name('listeFormation');
+Route::get('AjoutUE',[ActivitePedagogiqueController::class ,'AjoutUE'])->name('ajoutUE');
 // Route::get('UserRegister',[ActivitePedagogiqueController::class,'Create'])->name('CreateUser');
+//Route::post('AjoutFormation',[ActivitePedagogiqueController::class,'AjoutFormation'])->name('');
+
+
+
+
+
+
+                            // ============ Activité Pédagogique ===============
+
+Route::get('NouvelleActivite',[ActivitePedagogiqueController::class ,'NouvelleActivite'])->name('nouvelleActivite');
+Route::get('ActiviteProgrammer',[ActivitePedagogiqueController::class ,'ActiviteProgrammer'])->name('activiteProgrammer');
+Route::get('ActiviteTerminer',[ActivitePedagogiqueController::class,'ActiviteTerminer'])->name('activiteTerminer');
+Route::get('EditActivite',[ActivitePedagogiqueController::class,'EditActivite'])->name('editActivite');
+Route::get('DeletActivite',[ActivitePedagogiqueController::class,'DeletActivite'])->name('deletActivite');
 //Route::post('AjoutFormation',[ActivitePedagogiqueController::class,'AjoutFormation'])->name('');
 
 

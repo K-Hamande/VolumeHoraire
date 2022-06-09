@@ -51,4 +51,22 @@ class UserController extends Controller
 
         return view('pages.UserRegister');
     }
+
+
+
+    public function UpdatUser($id)
+    {
+        $User = User::find($id);
+        //dd($User);
+        return view('pages.UpdatUser', compact('User'));
+    }
+
+
+
+
+    public function DeletUser($id)
+    {
+        $User = User::find($id);
+        $User->delete();
+    }
 }

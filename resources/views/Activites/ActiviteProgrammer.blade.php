@@ -69,44 +69,51 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title" style="text-align:center " >LISTE DES UTILISATEURS </h4>
+                                <h4 class="card-title" style="text-align:center " >LISTE DES ACTIVITES </h4>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered zero-configuration">
                                         <thead>
                                             <tr>
-                                                <th>Nom</th>
-                                                <th>Prénom</th>
-                                                <th>Email</th>
-                                                <th>Sexe</th>
-                                                <th>Téléphone</th>
-                                                <th>Action</th>
+                                                <th>Periode</th>
+                                                <th>ECUE</th>
+                                                <th>Debut</th>
+                                                <th>Fin</th>
+                                                <th>Type Activité</th>
+                                                <th>Enseignant</th>
+                                                <th>Année Academique</th>
+                                                <th>Statu</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
-                                       @foreach ($AllUsers as $Users)
+                                      
 
                                     <tbody>
                                         <tr>
-                                            <td> {{ $Users->name }} </td>
-                                            <td> {{ $Users->prenom }} </td>
-                                            <td> {{ $Users->email }} </td>
-                                            <td> {{ $Users->sexe }} </td>
-                                            <td> {{ $Users->telephone }} </td>
-                                        
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td> 
-                                                    <button type="button" class="btn btn-info">Voir</button>
-                                                    <a href=" {{Route('updatUser',['id'=>$Users->id])}} "> <button type="button" class="btn btn-warning">Modifier</button> </a>
-                                                    <a href="{{Route('deletUser',['id'=>$Users->id])}}"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button></a>
+                                                
+                                                <button type="button" class="btn mb-1 btn-info"> Voir </button>
+                                                {{-- {{Route('EditActivite',[id => $Variable->id]) }} --}}
+                                                <button type="button" class="btn mb-1 btn-warning"> <a href="{{Route('editActivite')}}"> Modifier</a> </button>
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button>
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="exampleModalCenter">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title"> Suppression d'un utilisateur</h5>
+                                                                    <h5 class="modal-title"> Suppression d'une activité</h5>
                                                                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body" style="color: red">
-                                                                    Voulez vous vraiment supprimer  ?
+                                                                    Voulez vous vraiment supprimer l'activité ?
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-info" data-dismiss="modal">NON</button>
@@ -114,13 +121,12 @@
                                                             </div>
                                                                     </form>
                                                             </div>       
-                                                    </div>
+                                                       </div>
                                                     </div>
                                             </td>
+                                            
                                         </tr>
                                     </tbody>
-                                           
-                                       @endforeach
                                        
                                     </table>
                                 </div>

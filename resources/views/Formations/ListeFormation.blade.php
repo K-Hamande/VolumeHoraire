@@ -48,13 +48,13 @@
 
 
 
-
         <!--**********************************
             Content body start
         ***********************************-->
         <div class="content-body">
 
             <div class="container-fluid mt-3">
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -64,22 +64,57 @@
                                         <table class="table table-xs mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Etablissement</th>
                                                     <th>Departement</th>
                                                     <th>Filière</th>
+                                                    
+                                                    <th>Code Formation</th>
+                                                    <th>Intitué</th>
+                                                    <th>Année Academique </th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>UFR/ST</td>
-                                                    <td>Mathematique</td>
-                                                    <td><span> Mathematique</span></td>
+                                                    <td><img src="./images/avatar/1.jpg" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
+                                                    <td>iPhone X</td>
                                                     <td>
-                                                       <button class="btn btn-success"><a href="{{Route('ajoutFormation')}}"> Ajouter une formation </a></button>
+                                                        <span>United States</span>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="progress" style="height: 6px">
+                                                                <div class="progress-bar bg-success" style="width: 50%"></div>
+                                                            </div>
                                                         </div>
                                                     </td>
+                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
+                                                        <td> 
+                                                            <a href=" {{Route('ajoutUE')}} "> <button type="button" class="btn btn-info">Administrer une UE</button> </a>
+                                                            <a href="#"> <button type="button" class="btn btn-warning">Modifier</button> </a>
+                                                            <a href="#"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button></a>
+                                                            <!-- Modal -->
+                                                            <div class="modal fade" id="exampleModalCenter">
+                                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title"> Suppression d'un utilisateur</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body" style="color: red">
+                                                                            Voulez vous vraiment supprimer  ?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-info" data-dismiss="modal">NON</button>
+                                                                        <button type="button" class="btn btn-danger">OUI</button>
+                                                                    </div>
+                                                                            </form>
+                                                                    </div>       
+                                                            </div>
+                                                            </div>
+                                                    </td>
                                                 </tr>
+                                               
                                             </tbody>
                                         </table>
                                     </div>
@@ -87,11 +122,12 @@
                             </div>
                         </div>                        
                     </div>
-                </div> 
-                
+                </div>
+
+            
             </div>
-            <!-- #/ container -->
         </div>
+            <!-- #/ container -->
         <!--**********************************
             Content body end
         ***********************************-->

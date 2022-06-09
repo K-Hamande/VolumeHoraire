@@ -6,14 +6,67 @@ use Illuminate\Http\Request;
 
 class ActivitePedagogiqueController extends Controller
 {
-    public function Formation()
+
+    public function NouvelleActivite()
     {
-        return view('pages.Formation');
+        return view('Activites.AjoutActivite');
     }
 
 
-    public function AjoutFormation()
+    public function ActiviteProgrammer()
     {
-        return view('pages.AjoutFormation');
+        return view('Activites.ActiviteProgrammer');
+    }
+
+
+
+    public function ActiviteTerminer()
+    {
+        return view('Activites.ActiviteTerminer');
+    }
+
+
+
+    public function EditActivite()
+    {
+        return view('Activites.EditActivite');
+    }
+
+
+    public function DeletActivite()
+    {
+        return view('Activites.DeletActivite');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    // ======================= Formation =================
+
+
+    public function Formation()
+    {
+        return view('Formations.Formation');
+    }
+
+
+    public function ListeFormation()
+    {
+        return view('Formations.ListeFormation');
+    }
+
+
+
+    public function AjoutUE()
+    {
+        return view('Formations.AjouteUE');
     }
 }
