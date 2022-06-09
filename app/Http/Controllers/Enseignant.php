@@ -6,24 +6,29 @@ use Illuminate\Http\Request;
 
 class Enseignant extends Controller
 {
-    public function Enseignant()
+    public function Permanent()
     {
-        return view('pages.Enseignant');
+        return view('Enseignants.Permanent');
+    }
+
+    public function Vacataire()
+    {
+        return view('Enseignants.Vacataire');
     }
 
 
-    public function AddEnseignant()
-    {
-        return view('pages.EnseignantRegister');
-    }
+    // public function AddEnseignant()
+    // {
+    //     return view('pages.EnseignantRegister');
+    // }
 
     public function ListeEnseignant()
     {
-        return view('pages.ListeEnseignant');
+        return view('Enseignants.ListeEnseignant');
     }
 
     public function EnseignantActivite()
     {
-        return view('pages.EnseignantActivite');
+        return view('Enseignants.EnseignantActivite');
     }
 }

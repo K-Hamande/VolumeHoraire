@@ -64,12 +64,10 @@
                                         <table class="table table-xs mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Departement</th>
-                                                    <th>Filière</th>
-                                                    
-                                                    <th>Code Formation</th>
-                                                    <th>Intitué</th>
-                                                    <th>Année Academique </th>
+                                                    <th>Matricule </th>
+                                                    <th>Nom</th>
+                                                    <th>Prénom(s)</th>
+                                                    <th>Grade</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -80,17 +78,10 @@
                                                     <td>
                                                         <span>United States</span>
                                                     </td>
-                                                    <td>
-                                                        <div>
-                                                            <div class="progress" style="height: 6px">
-                                                                <div class="progress-bar bg-success" style="width: 50%"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
                                                     <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
                                                         <td> 
-                                                            <a href=" {{Route('ajoutUE')}} "> <button type="button" class="btn btn-info">Administrer une UE</button> </a>
-                                                            <a href="{{Route('editFormation')}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>
+                                                            <a href=""> <button type="button" class="btn btn-info">Voir</button> </a>
+                                                            <a href=""> <button type="button" class="btn btn-warning">Modifier</button> </a>
                                                             <a href="#"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button></a>
                                                             <!-- Modal -->
                                                             <div class="modal fade" id="exampleModalCenter">

@@ -42,7 +42,18 @@
                             <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Enseignants</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{Route('enseignant')}}">Ajouter un enseignant</a></li>
+                            <li>
+                                <li class="mega-menu mega-menu-sm">
+                                    <a class="has-arrow"" aria-expanded="false">
+                                        <span class="nav-text">Ajouter un enseignant </span>
+                                    </a>
+                                    <ul aria-expanded="false">
+                                        <li><a href="{{Route('permanent')}}">Permanent </a></li>
+                                        <li><a href="{{Route('vacataire')}}">Vacataire</a></li>
+                                    </ul>
+                                </li>
+
+                            </li>
                             <li><a href="{{Route('listeEnseignant')}}">liste des Enseignant</a></li>
                             <li><a href="{{Route('enseignantActivite')}}">Activité En cours </a></li>
                             <li><a href="{{Route('enseignantActivite')}}">Activité Terminée</a></li>

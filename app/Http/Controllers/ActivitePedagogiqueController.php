@@ -69,4 +69,11 @@ class ActivitePedagogiqueController extends Controller
     {
         return view('Formations.AjouteUE');
     }
+
+
+
+    public function EditFormation()
+    {
+        return view('Formations.EditFormation');
+    }
 }
