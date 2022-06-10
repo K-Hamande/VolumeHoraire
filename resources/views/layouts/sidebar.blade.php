@@ -18,6 +18,15 @@
 
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-copy fa fa-briefcase"></i> <span class="nav-text"> Attribution</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a a href="{{Route('attribution')}}">Nouvelle Attribution</a></li>
+                            <li><a href="{{Route('listeAttribution')}}">liste des Attributions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-copy fa fa-briefcase"></i> <span class="nav-text"> Activité Pédagogique</span>
                         </a>
                         <ul aria-expanded="false">
@@ -79,7 +88,7 @@
                             <li><a href="{{Route('departement')}}">Département</a></li>
                             <li><a href="{{Route('filiere')}}">Filière</a></li>
                             <li><a href="{{Route('ue')}}">UE</a></li>
-                            <li><a href="{{Route('ecue')}}">Matière</a></li>
+                            <li><a href="{{Route('ecue')}}">ECUE</a></li>
                         </ul>
                     </li>
 

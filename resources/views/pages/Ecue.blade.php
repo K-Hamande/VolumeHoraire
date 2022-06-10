@@ -67,40 +67,58 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12">
-                        <form action="{{Route('EtablissementRegister')}}" id="step-form-horizontal" class="step-form-horizontal" method="post">
-                            @csrf
-                            <div>
-                                <section>
+                    <div class="col lg-2"></div>
+                    <div class="col-lg-8 mt-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="text-align: center">ECUE</h4>
+                                <form action="" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                    @csrf
+                                    <div>
+                                        <section>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Selectionner le UE:</label>
+                                                        <select class="form-control" id="sel1" name="choixDep">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="code" class="form-control" placeholder="Code de l'ECUE" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="intitule" class="form-control" placeholder="Intitulé de l'ECUE" required>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </section>
                                     <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="text" name="code" class="form-control" placeholder="code de l ECUE" required >
-                                            </div>
+                                        <div class="col-lg-4">
+                                            
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="text" name="intitule" class="form-control" placeholder="intitulé de l ECUE" required>
-                                            </div>
+                                        <div class="col-lg-4">
+        
+                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">ENREGISTRER</button>
                                         </div>
-                                        <div class="col-lg-6 ">
-                                            <div class="">
-                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">ENREGISTRER LA MATIERE</button>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="">
-                                                <a href="{{ Route('departement')}}"class="btn mb-4 btn-rounded btn-info" style="width: 100%"> AJOUTER UNE UE </a>
-                                            </div>
+                                        <div class="col-lg-4">
                                         </div>
                                     </div>
-                                </section>  
-                        </form>
-
-
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="col lg-2"></div>
+                </div>
             <!-- #/ container -->
         </div>
 

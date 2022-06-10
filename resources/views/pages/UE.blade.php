@@ -67,40 +67,48 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12">
-                        <form action="{{Route('EtablissementRegister')}}" id="step-form-horizontal" class="step-form-horizontal" method="post">
-                            @csrf
-                            <div>
-                                <section>
+                    <div class="col lg-2"></div>
+                    <div class="col-lg-8 mt-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="text-align: center">UE </h4>
+                                <form action="" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                    @csrf
+                                    <div>
+                                        <section>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="ue" class="form-control" placeholder="Intitué de l UE" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <input type="number" name="credit" class="form-control" placeholder="Credit de l'UE" required>
+                                                    </div>
+                                                </div>
+                                               
+                                                
+                                            </div>
+                                        </section>
                                     <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="text" name="name" class="form-control" placeholder="intitulé UE" required>
-                                            </div>
+                                        <div class="col-lg-4">
+                                            
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="number" name="prenom" class="form-control" placeholder="cerdit de l'UE" >
-                                            </div>
+                                        <div class="col-lg-4">
+        
+                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">ENREGISTRER</button>
                                         </div>
-                                        <div class="col-lg-6 ">
-                                            <div class="">
-                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">ENREGISTRER UE</button>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="">
-                                                <a href="{{ Route('ecue')}}"class="btn mb-4 btn-rounded btn-info" style="width: 100%"> AJOUTER UNE MATIERE </a>
-                                            </div>
+                                        <div class="col-lg-4">
                                         </div>
                                     </div>
-                                </section>  
-                        </form>
-
-
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="col lg-2"></div>
+                </div>
             <!-- #/ container -->
         </div>
 

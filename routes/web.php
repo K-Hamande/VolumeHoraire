@@ -67,9 +67,11 @@ Route::post('FiliereRegister',[EtablissementController::class,'filiereRegister']
 
                     // ============ UE ===============
 Route::get('UE',[EtablissementController::class ,'UE'])->name('ue');
-//Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
-// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+//Route::get('EditUE',[EtablissementController::class ,'EditUE'])->name('editUE');
+// Route::get('DeletUE',[EtablissementController::class,'DeletUE'])->name('deletUE');
 Route::post('ueRegister',[EtablissementController::class,'UeRegister'])->name('ueRegister');
+//Route::post('',[EtablissementController::class,''])->nam('');
+//Route::post('',[EtablissementController::class,''])->name('');
 
 
 
@@ -79,6 +81,8 @@ Route::get('Ecue',[EtablissementController::class ,'Ecue'])->name('ecue');
 //Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
 // Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
 Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('EcueRegister');
+//Route::post('',[EtablissementController::class,''])->nam('');
+//Route::post('',[EtablissementController::class,''])->name('');
 
 
 
@@ -88,8 +92,8 @@ Route::get('Formation',[ActivitePedagogiqueController::class ,'Formation'])->nam
 Route::get('ListeFormation',[ActivitePedagogiqueController::class ,'ListeFormation'])->name('listeFormation');
 Route::get('AjoutUE',[ActivitePedagogiqueController::class ,'AjoutUE'])->name('ajoutUE');
 Route::get('EditFormation',[ActivitePedagogiqueController::class ,'EditFormation'])->name('editFormation');
-// Route::get('UserRegister',[ActivitePedagogiqueController::class,'Create'])->name('CreateUser');
-//Route::post('AjoutFormation',[ActivitePedagogiqueController::class,'AjoutFormation'])->name('');
+//Route::post('',[ActivitePedagogiqueController::class,''])->name('');
+//Route::post('',[ActivitePedagogiqueController::class,''])->name('');
 
 
 
@@ -103,15 +107,30 @@ Route::get('ActiviteProgrammer',[ActivitePedagogiqueController::class ,'Activite
 Route::get('ActiviteTerminer',[ActivitePedagogiqueController::class,'ActiviteTerminer'])->name('activiteTerminer');
 Route::get('EditActivite',[ActivitePedagogiqueController::class,'EditActivite'])->name('editActivite');
 Route::get('DeletActivite',[ActivitePedagogiqueController::class,'DeletActivite'])->name('deletActivite');
-//Route::post('AjoutFormation',[ActivitePedagogiqueController::class,'AjoutFormation'])->name('');
+//Route::post('',[ActivitePedagogiqueController::class,''])->name('');
+//Route::post('',[ActivitePedagogiqueController::class,''])->name('');
+
 
 
 
                     // ============ Enseigants ===============
-Route::get('Permanent',[Enseignant::class ,'Permanent'])->name('permanent');
+Route::get('Permanent',[ActivitePedagogiqueController::class ,'Permanent'])->name('permanent');
 Route::get('Vacataire',[Enseignant::class ,'Vacataire'])->name('vacataire');
 //Route::get('AddEnseignant',[Enseignant::class ,'AddEnseignant'])->name('addEnseignant');
 Route::get('ListeEnseignant',[Enseignant::class ,'ListeEnseignant'])->name('listeEnseignant');
 Route::get('EnseignantActivite',[Enseignant::class ,'EnseignantActivite'])->name('enseignantActivite');
-// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+// Route::post('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+//Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('EcueRegister');
+
+
+
+
+
+
+                    // ============ Attribution ===============
+Route::get('Attribution',[ActivitePedagogiqueController::class ,'Attribution'])->name('attribution');
+Route::get('ListeAttribution',[ActivitePedagogiqueController::class ,'ListeAttribution'])->name('listeAttribution');
+Route::get('EditAttribution',[ActivitePedagogiqueController::class ,'EditAttribution'])->name('editAttribution');
+Route::get('DeletAttribution',[ActivitePedagogiqueController::class ,'DeletAttribution'])->name('deletAttribution');
+// Route::Post('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
 //Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('EcueRegister');

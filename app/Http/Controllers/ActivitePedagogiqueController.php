@@ -40,15 +40,6 @@ class ActivitePedagogiqueController extends Controller
 
 
 
-
-
-
-
-
-
-
-
-
     // ======================= Formation =================
 
 
@@ -76,4 +67,27 @@ class ActivitePedagogiqueController extends Controller
     {
         return view('Formations.EditFormation');
     }
+
+
+
+
+
+
+public function Attribution()
+{
+    return view('pages.Attribution');
+}
+
+
+public function ListeAttribution()
+{
+    return view('pages.ListeAttribution');
+}
+
+
+
+
+
+
+
 }
