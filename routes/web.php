@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\ActivitePedagogiqueController;
-use App\Http\Controllers\Enseignant;
 use App\Models\User;
+use App\Http\Controllers\Enseignant;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EtablissementController;
 use App\Http\Controllers\GestionUtilisateurController;
+use App\Http\Controllers\ActivitePedagogiqueController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,11 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
+ Route::middleware(['auth'])->group( function() {
+
+
+
+
 
 // les differntes routes pour la gestion des utilisateurs
 
@@ -35,7 +41,8 @@ Route::get('User',[UserController::class ,'UserIndex'])->name('user');
 Route::get('UserRegister',[UserController::class,'Create'])->name('createUser');
 Route::get('DeletUser/{id}',[UserController::class,'DeletUser'])->name('deletUser');
 Route::get('UpdatUser/{id}',[UserController::class,'UpdatUser'])->name('updatUser');
-Route::post('Register',[UserController::class,'CreateUser'])->name('cegister');
+Route::post('URegister',[UserController::class,'CreateUser'])->name('Uregister');
+
 
 
 
@@ -114,7 +121,7 @@ Route::get('DeletActivite',[ActivitePedagogiqueController::class,'DeletActivite'
 
 
                     // ============ Enseigants ===============
-Route::get('Permanent',[ActivitePedagogiqueController::class ,'Permanent'])->name('permanent');
+Route::get('Permanent',[Enseignant::class ,'Permanent'])->name('permanent');
 Route::get('Vacataire',[Enseignant::class ,'Vacataire'])->name('vacataire');
 //Route::get('AddEnseignant',[Enseignant::class ,'AddEnseignant'])->name('addEnseignant');
 Route::get('ListeEnseignant',[Enseignant::class ,'ListeEnseignant'])->name('listeEnseignant');
@@ -134,3 +141,5 @@ Route::get('EditAttribution',[ActivitePedagogiqueController::class ,'EditAttribu
 Route::get('DeletAttribution',[ActivitePedagogiqueController::class ,'DeletAttribution'])->name('deletAttribution');
 // Route::Post('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
 //Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('EcueRegister');
+
+ });

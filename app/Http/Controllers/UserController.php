@@ -39,9 +39,11 @@ class UserController extends Controller
 
     $Role = new Role();
     $Role->intituleRole = $request->intituleRole;
-    dd($Users->roles()->sync($Users));
+    //dd($Users);
     $Role->save();
     $Users->save();
+    $Users->Roles()->attach($Role);
+    
        
         return view('pages.UserRegister');
     } 

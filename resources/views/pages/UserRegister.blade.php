@@ -80,7 +80,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title" style="text-align: center"> UTILISATEURS </h4>
-                                <form action="{{ Route('register') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <form action="{{ Route('Uregister') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
@@ -196,9 +196,6 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        
-
-
 
                         {{-- <div class="card">
                             <div class="card-body">
