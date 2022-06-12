@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Ufr extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'intitule',
+        'sigle',
+
+    ];
 }

@@ -64,48 +64,55 @@
                                         <table class="table table-xs mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Matricule </th>
-                                                    <th>Nom</th>
-                                                    <th>Prénom(s)</th>
-                                                    <th>Grade</th>
+                                                    <th>Intitué</th>
+                                                    <th>Sigle</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+
+                                                @forelse  ($ListEtablissement as $Etablissement)
+
+                                                
                                                 <tr>
-                                                    <td><img src="./images/avatar/1.jpg" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
-                                                    <td>iPhone X</td>
+                                                   
                                                     <td>
-                                                        <span>United States</span>
+                                                        <span>{{ $Etablissement->intitule }} </span>
                                                     </td>
-                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
+                                                    <td>
+                                                        <span>{{ $Etablissement->sigle }} </span>
+                                                    </td>
+                                                
                                                         <td> 
-                                                            <a href=""> <button type="button" class="btn btn-info">Voir</button> </a>
-                                                            <a href=""> <button type="button" class="btn btn-warning">Modifier</button> </a>
-                                                            <a href="#"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button></a>
+                                                            {{-- <a href=" {{Route('ajoutUE')}} "> <button type="button" class="btn btn-info">Administrer une UE</button> </a> --}}
+                                                            <a href="{{Route('editEtablissement',['id'=>$Etablissement->id])}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>
+                                                            <a href="{{Route('deletEtablissement',['id'=>$Etablissement->id])}}"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button></a>
                                                             <!-- Modal -->
                                                             <div class="modal fade" id="exampleModalCenter">
                                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            <h5 class="modal-title"> Suppression d'un utilisateur</h5>
+                                                                            <h5 class="modal-title"> Suppression d'un Etablissement</h5>
                                                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                                                             </button>
                                                                         </div>
                                                                         <div class="modal-body" style="color: red">
-                                                                            Voulez vous vraiment supprimer  ?
+                                                                            Voulez vous vraiment supprimer l etablissement  ?
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-info" data-dismiss="modal">NON</button>
                                                                         <button type="button" class="btn btn-danger">OUI</button>
                                                                     </div>
-                                                                            </form>
                                                                     </div>       
                                                             </div>
                                                             </div>
                                                     </td>
                                                 </tr>
-                                               
+                                                    
+                                                @empty
+                                                    
+                                                @endforelse
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -140,4 +147,4 @@
         Main wrapper end
     ***********************************-->
 
-    @include('layouts.script2')
+    @include('layouts.script')

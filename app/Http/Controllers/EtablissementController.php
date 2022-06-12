@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ufr;
 use Illuminate\Http\Request;
 
 class EtablissementController extends Controller
@@ -10,12 +11,51 @@ class EtablissementController extends Controller
 
        public function Etablissement()
        {
-           return view('pages.Etablissement');
+           return view('Etablissement.Etablissement');
        }
 
         public function EtablissementRegister(Request $request)
         {
-            return view('pages.Etablissement');
+            $Ufr = new Ufr();
+            $Ufr->intitule = $request->intitule;
+            $Ufr->sigle = $request->sigle;
+            $Ufr->save();
+       
+            return view('Etablissement.Etablissement');
+        }
+
+
+
+        public function ListEtablissement()
+        {
+            $ListEtablissement = Ufr::all();
+            return view('Etablissement.ListEtablissement',compact('ListEtablissement'));
+        }
+
+        
+        public function DeletEtablissement($id)
+        {
+            $Etablissement = Ufr::find($id);
+            $Etablissement->delete();
+            return redirect('/ListEtablissement');
+        }
+
+        public function EditEtablissement($id)
+        {
+            $Etablissement = Ufr::find($id);
+            return view('Etablissement.EditEtablissement',compact('Etablissement'));
+        }
+
+
+        public function UpdatEtablissement(Request $request ,$id)
+        {
+            $Ufr =  Ufr::find($id);
+            $Ufr->intitule = $request->intitule;
+            $Ufr->sigle = $request->sigle;
+            $Ufr->update();
+       
+            return redirect('/ListEtablissement');
+
         }
 
 

@@ -50,9 +50,11 @@ Route::post('URegister',[UserController::class,'CreateUser'])->name('Uregister')
 
                     // ============ UFR===============
 Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
-Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
-// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+Route::get('EditEtablissement/{id}',[EtablissementController::class ,'EditEtablissement'])->name('editEtablissement');
+Route::get('ListEtablissement',[EtablissementController::class ,'ListEtablissement'])->name('listEtablissement');
+Route::get('DeletEtablissement/{id}',[EtablissementController::class,'DeletEtablissement'])->name('deletEtablissement');
 Route::post('EtablissementRegister',[EtablissementController::class,'EtablissementRegister'])->name('EtablissementRegister');
+Route::post('UpdatEtablissement/{id}',[EtablissementController::class,'UpdatEtablissement'])->name('updatEtablissement');
 
 
 

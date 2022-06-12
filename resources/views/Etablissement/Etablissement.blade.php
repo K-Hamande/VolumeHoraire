@@ -59,7 +59,7 @@
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{Route('Accueil')}}">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">liste des établissements</a></li>
+                        <li class="breadcrumb-item active"><a href="{{Route('listEtablissement')}}">liste des établissements</a></li>
                     </ol>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title" style="text-align: center"> ETABLISSEMENT </h4>
-                                <form action="" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <form action="{{Route('EtablissementRegister')}}" id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
@@ -120,20 +120,4 @@
         Main wrapper end
     ***********************************-->
 
-    <!--**********************************
-        Scripts
-    ***********************************-->
-    <script src="plugins/common/common.min.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/gleek.js"></script>
-    <script src="js/styleSwitcher.js"></script>
-
-
-    <script src="./plugins/jquery-steps/build/jquery.steps.min.js"></script>
-    <script src="./plugins/jquery-validation/jquery.validate.min.js"></script>
-    <script src="./js/plugins-init/jquery-steps-init.js"></script>
-
-</body>
-
-</html>
+    @include('layouts.script')
