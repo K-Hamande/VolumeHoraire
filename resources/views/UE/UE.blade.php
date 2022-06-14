@@ -59,7 +59,7 @@
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{Route('Accueil')}}">Accueil</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">liste des filières</a></li>
+                        <li class="breadcrumb-item active"><a href="{{Route('listUe')}}">Liste des UE</a></li>
                     </ol>
                 </div>
             </div>
@@ -71,29 +71,23 @@
                     <div class="col-lg-8 mt-4">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title" style="text-align: center"> FILIERE </h4>
-                                <form action="" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <h4 class="card-title" style="text-align: center">UE </h4>
+                                <form action=" {{Route('ueRegister')}} " id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <label>Selectionner le departement:</label>
-                                                        <select class="form-control" id="sel1" name="choixDep">
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>3</option>
-                                                        </select>
+                                                        <input type="text" name="ue" class="form-control" placeholder="Intitué de l UE" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <input type="number" name="credit" class="form-control" placeholder="Credit de l'UE" required>
                                                     </div>
                                                 </div>
                                                
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <input type="text" name="intitule" class="form-control" placeholder="Intitulé de la filière" required>
-                                                    </div>
-                                                </div>
                                                 
                                             </div>
                                         </section>

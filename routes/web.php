@@ -60,27 +60,32 @@ Route::post('UpdatEtablissement/{id}',[EtablissementController::class,'UpdatEtab
 
                     // ============ Departement===============
 Route::get('Departement',[EtablissementController::class ,'Departement'])->name('departement');
-//Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
-// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
+Route::get('ListeDepartement',[EtablissementController::class ,'ListeDepartement'])->name('listeDepartement');
+Route::get('EditDepartement/{id}',[EtablissementController::class,'EditDepartement'])->name('editDepartement');
 Route::post('DepartementRegister',[EtablissementController::class,'DepartementRegister'])->name('DepartementRegister');
+Route::post('UpdatDepartement/{id}',[EtablissementController::class,'UpdatDepartement'])->name('updatDepartement');
+Route::get('DeletDepartement/{id}',[EtablissementController::class,'DeletDepartement'])->name('deletDepartement');
 
 
 
 
                     // ============ Filière ===============
 Route::get('Filiere',[EtablissementController::class ,'Filiere'])->name('filiere');
-//Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
-// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
 Route::post('FiliereRegister',[EtablissementController::class,'filiereRegister'])->name('filiereRegister');
+Route::get('ListFiliere',[EtablissementController::class ,'ListFiliere'])->name('listFiliere');
+Route::get('EditFiliere/{id}',[EtablissementController::class,'EditFiliere'])->name('editFiliere');
+Route::post('UpdatFiliere/{id}',[EtablissementController::class,'UpdatFiliere'])->name('updatFiliere');
+Route::get('DeletFiliere/{id}',[EtablissementController::class,'DeletFiliere'])->name('deletFiliere');
 
 
                     // ============ UE ===============
 Route::get('UE',[EtablissementController::class ,'UE'])->name('ue');
-//Route::get('EditUE',[EtablissementController::class ,'EditUE'])->name('editUE');
-// Route::get('DeletUE',[EtablissementController::class,'DeletUE'])->name('deletUE');
+Route::get('ListUe',[EtablissementController::class ,'ListUe'])->name('listUe');
 Route::post('ueRegister',[EtablissementController::class,'UeRegister'])->name('ueRegister');
-//Route::post('',[EtablissementController::class,''])->nam('');
-//Route::post('',[EtablissementController::class,''])->name('');
+Route::get('EditUe/{id}',[EtablissementController::class ,'EditUE'])->name('editUe');
+Route::get('DeletUe/{id}',[EtablissementController::class,'DeletUE'])->name('deletUe');
+Route::post('UpdatUe/{id}',[EtablissementController::class,'UpdatUe'])->name('updatUe');
+
 
 
 
@@ -90,7 +95,7 @@ Route::get('Ecue',[EtablissementController::class ,'Ecue'])->name('ecue');
 //Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
 // Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
 Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('EcueRegister');
-//Route::post('',[EtablissementController::class,''])->nam('');
+//Route::post('UpdatFiliere/{id}',[EtablissementController::class,'UpdatFiliere'])->name('updatFiliere');
 //Route::post('',[EtablissementController::class,''])->name('');
 
 
