@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Ufr;
 use App\Models\User;
 use App\Http\Controllers\Enseignant;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +25,10 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 
 Route::get('/', function () {
     $User = User::all();
-    return view('pages.dashboard',compact('User'));
+    $Etablissement = Ufr::all();
+    //$Enseinant = User::all();
+    //$Activite = Ufr::all();
+    return view('pages.dashboard',compact('User','Etablissement'));
 })->middleware(['auth'])->name('Accueil');
 
 require __DIR__.'/auth.php';
@@ -92,17 +96,26 @@ Route::post('UpdatUe/{id}',[EtablissementController::class,'UpdatUe'])->name('up
 
                     // ============ ECUE ===============
 Route::get('Ecue',[EtablissementController::class ,'Ecue'])->name('ecue');
-//Route::get('Etablissement',[EtablissementController::class ,'Etablissement'])->name('etablissement');
-// Route::get('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
-Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('EcueRegister');
-//Route::post('UpdatFiliere/{id}',[EtablissementController::class,'UpdatFiliere'])->name('updatFiliere');
-//Route::post('',[EtablissementController::class,''])->name('');
+Route::get('ListEcue',[EtablissementController::class ,'ListEcue'])->name('listEcue');
+Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('ecueRegister');
+Route::get('EditEcue/{id}',[EtablissementController::class,'EditEcue'])->name('editEcue');
+Route::post('UpdatEcue/{id}',[EtablissementController::class,'UpdatEcue'])->name('updatEcue');
+Route::get('DeletEcue/{id}',[EtablissementController::class,'DeletEcue'])->name('deletEcue');
+
+
+                    // ============ Année Academique ===============
+Route::get('Annee',[EtablissementController::class ,'Annee'])->name('annee');
+Route::get('ListAnnee',[EtablissementController::class ,'ListAnnee'])->name('listAnnee');
+Route::post('AnneeRegister',[EtablissementController::class,'AnneeRegister'])->name('anneeRegister');
+Route::get('EditAnnee/{id}',[EtablissementController::class,'EditEcue'])->name('editEcue');
+Route::post('UpdatAnnee/{id}',[EtablissementController::class,'UpdatAnnee'])->name('updatAnnee');
+Route::get('DeletAnnee/{id}',[EtablissementController::class,'DeletAnnee'])->name('deletAnnee');
 
 
 
 
                     // ============ Formations ===============
-Route::get('Formation',[ActivitePedagogiqueController::class ,'Formation'])->name('formation');
+Route::get('Formation/{id}',[ActivitePedagogiqueController::class,'Formation'])->name('formation');
 Route::get('ListeFormation',[ActivitePedagogiqueController::class ,'ListeFormation'])->name('listeFormation');
 Route::get('AjoutUE',[ActivitePedagogiqueController::class ,'AjoutUE'])->name('ajoutUE');
 Route::get('EditFormation',[ActivitePedagogiqueController::class ,'EditFormation'])->name('editFormation');

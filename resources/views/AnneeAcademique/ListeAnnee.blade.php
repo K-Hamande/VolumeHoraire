@@ -84,12 +84,12 @@
                                             </thead>
                                             <tbody>
 
-                                                @forelse($Liste as $Values)
+                                                @forelse($Annee as $Values)
 
                                                 <tr>
                                                    
                                                     <td>
-                                                         <span>{{$Values->intituleUE}} </span> 
+                                                         <span>{{$Values->AnneeAcademique}} </span> 
                                                     </td>
                                                     <td>
                                                         <span>{{$Values->creditUE}}</span> 

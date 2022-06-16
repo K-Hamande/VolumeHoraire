@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ufr;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -39,19 +40,16 @@ class UserController extends Controller
 
     $Role = new Role();
     $Role->intituleRole = $request->intituleRole;
-    //dd($Users);
     $Role->save();
     $Users->save();
     $Users->Roles()->attach($Role);
-    
-       
-        return view('pages.UserRegister');
+        return redirect('/Create');
     } 
 
     public function Create()
     {
-
-        return view('pages.UserRegister');
+        $Ufr = Ufr::all();
+        return view('pages.UserRegister',compact('Ufr'));
     }
 
 
@@ -59,7 +57,6 @@ class UserController extends Controller
     public function UpdatUser($id)
     {
         $User = User::find($id);
-        //dd($User);
         return view('pages.UpdatUser', compact('User'));
     }
 
@@ -68,5 +65,6 @@ class UserController extends Controller
     {
         $User = User::find($id);
         $User->delete();
+        return redirect('/UserIndex');
     }
 }

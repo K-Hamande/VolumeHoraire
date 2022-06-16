@@ -95,7 +95,7 @@
                                             <td> 
                                                     <button type="button" class="btn btn-info">Voir</button>
                                                     <a href=" {{Route('updatUser',['id'=>$Users->id])}} "> <button type="button" class="btn btn-warning">Modifier</button> </a>
-                                                    <a href="{{Route('deletUser',['id'=>$Users->id])}}"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button></a>
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button>
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="exampleModalCenter">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -110,7 +110,7 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-info" data-dismiss="modal">NON</button>
-                                                                <button type="button" class="btn btn-danger">OUI</button>
+                                                                <a href="{{Route('deletUser',['id'=>$Users->id])}}"> <button type="button" class="btn btn-danger">OUI</button></a>
                                                             </div>
                                                                     </form>
                                                             </div>       

@@ -161,11 +161,12 @@
         
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label>Selectionner l'UFR:</label>
+                                                        <label>Selectionner l'Etablissement:</label>
                                                         <select class="form-control" id="sel1" name="ufr">
-                                                            <option>ST</option>
-                                                            <option>SJP</option>
-                                                            <option>SEG</option>
+                                                            @foreach($Ufr as $Values)
+                                                            <option value="{{$Values->id}}" >{{$Values->intitule}}</option>
+                                                            @endforeach
+                                                            
                                                         </select>
                                                     </div>
                                                 </div>

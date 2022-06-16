@@ -53,6 +53,15 @@
         ***********************************-->
         <div class="content-body">
 
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{Route('Accueil')}}">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="{{Route('etablissement')}}">Ajout D'etablissement</a></li>
+                    </ol>
+                </div>
+            </div>
+
             <div class="container-fluid mt-3">
 
                 <div class="row">
@@ -85,7 +94,7 @@
                                                     </td>
                                                 
                                                         <td> 
-                                                            {{-- <a href=" {{Route('ajoutUE')}} "> <button type="button" class="btn btn-info">Administrer une UE</button> </a> --}}
+                                                            <a href="{{Route('formation',['id'=>$Etablissement->id])}}"> <button type="button" class="btn btn-info">Ajouter une Formation</button> </a>
                                                             <a href="{{Route('editEtablissement',['id'=>$Etablissement->id])}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>
                                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button>
                                                             <!-- Modal -->

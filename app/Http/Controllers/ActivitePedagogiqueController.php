@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ufr;
 use Illuminate\Http\Request;
 
 class ActivitePedagogiqueController extends Controller
@@ -43,9 +44,10 @@ class ActivitePedagogiqueController extends Controller
     // ======================= Formation =================
 
 
-    public function Formation()
+    public function Formation($id)
     {
-        return view('Formations.Formation');
+        $Etablissement = Ufr::findOrFail($id);
+        return view('Formations.Formation',compact('Etablissement'));
     }
 
 

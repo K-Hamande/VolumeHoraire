@@ -40,7 +40,7 @@
                             <i class="icon-copy fa fa-briefcase"></i> <span class="nav-text"> Formation</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{Route('formation')}}">Nouvelle Formation</a></li>
+                            {{-- <li><a href="{{Route('formation')}}">Nouvelle Formation</a></li> --}}
                             <li><a href=" {{Route('listeFormation')}} ">Liste des formations</a></li>
                             {{-- <li><a href="./email-compose.html">Compose</a></li> --}}
                         </ul>
@@ -89,6 +89,7 @@
                             <li><a href="{{Route('filiere')}}">Filière</a></li>
                             <li><a href="{{Route('ue')}}">UE</a></li>
                             <li><a href="{{Route('ecue')}}">ECUE</a></li>
+                            <li><a href="{{Route('annee')}}">Année Academique</a></li>
                         </ul>
                     </li>
 

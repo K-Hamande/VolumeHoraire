@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ue;
 use App\Models\Ufr;
+use App\Models\Ecue;
 use App\Models\Filiere;
 use App\Models\Departement;
-use App\Models\Ue;
 use Illuminate\Http\Request;
+use App\Models\AnneeAcademique;
 
 class EtablissementController extends Controller
 {
@@ -215,14 +217,102 @@ class EtablissementController extends Controller
 
        public function Ecue()
        {
-           return view('pages.Ecue');
+        $UE = Ue::all();
+           return view('Ecues.Ecue',compact('UE'));
        }
 
 
 
         public function EcueRegister(Request $request)
         {
-            return view('pages.Ecue');
+            $Ecue = new Ecue();
+            $Ecue->intituleEcue = $request->intitule;
+            $Ecue->codeEcue = $request->code;
+            $Ecue->ue_id = $request->choix;
+            $Ecue->save();
+            return redirect('/Ecue');
+        }
+
+
+        public function ListEcue()
+        {
+            $ListEcue = Ecue::all();
+            return view('Ecues.ListEcue',compact('ListEcue'));
+        }
+
+        public function EditEcue($id)
+        {
+            $Ecue = Ecue::findOrFail($id);
+            $UE = Ue::all();
+            return view('Ecues.EditEcue',compact('UE','Ecue'));
+        }
+
+
+
+        public function UpdatEcue(Request $request,$id)
+        {
+            $Ecue = Ecue::findOrFail($id);
+            $Ecue->intituleEcue = $request->intitule;
+            $Ecue->codeEcue = $request->code;
+            $Ecue->ue_id = $request->choix;
+            $Ecue->Update();
+            return redirect('/ListEcue');
+        }
+
+        public function DeletEcue($id)
+        {
+            $Ecue = Ecue::findOrFail($id);
+            $Ecue->delete();
+            return redirect('/ListEcue');
+
+        }
+       // ==================== Année Academique ===============
+
+       public function Annee()
+       {
+        $Annee = AnneeAcademique::all();
+           return view('AnneeAcademique.Annee',compact('Annee'));
+       }
+
+
+
+        public function AnneeRegister(Request $request)
+        {
+            $Annee = new AnneeAcademique();
+            $Annee->AnneeAcademique = $request->annee;
+            $Annee->save();
+            return redirect('/Annee');
+        }
+
+
+        public function ListAnnee()
+        {
+            $ListAnnee = AnneeAcademique::all();
+            return view('AnneeAcademique.ListEcue',compact('ListAnnee'));
+        }
+
+        public function EditAnnee($id)
+        {
+            $Annee = AnneeAcademique::findOrFail($id);
+            return view('AnneeAcademique.EditAnnee',compact('Annee'));
+        }
+
+
+
+        public function UpdatAnnee(Request $request,$id)
+        {
+            $Annee = AnneeAcademique::findOrFail($id);
+            $Annee->AnneeAcademique = $request->annee;
+            $Annee->Update();
+            return redirect('/ListAnnee');
+        }
+
+        public function DeletAnnee($id)
+        {
+            $Annee = AnneeAcademique::findOrFail($id);
+            $Annee->delete();
+            return redirect('/ListAnnee');
+
         }
     
 }

@@ -80,12 +80,7 @@
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <input type="text" name="etablissement" class="form-control" placeholder="Etablissement" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <input type="text" name="departement" class="form-control" placeholder="Departement" required>
+                                                        <input type="" name="etablissement"  disabled value="{{$Etablissement->sigle}}" class="form-control" placeholder="Etablissement" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
@@ -98,29 +93,42 @@
                                                         <input type="text" name="intituleFormation" class="form-control" placeholder="Intitulé Formation" required>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </section>
-                                        <section>
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <input type="text" name="licence " class="form-control" placeholder="Licence" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <input type="text" name="semestre " class="form-control" placeholder="Semestre" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <input type="text" name="anneeAcademique " class="form-control" placeholder="Année Academique" required>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </section>
+                                        <section>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                        
+                                                            <div class="form-group">
+                                                                {{-- <label>Selectionner le UE:</label> --}}
+                                                                <select class="form-control" id="sel1" name="choix">
+                                                                   
+                                                                   <option > Licence 1 </option>
+                                                                   <option > Licence 2  </option>
+                                                                   <option > Licence 3  </option>
+                                                                   <option >  Master 1 </option>
+                                                                   <option >  Master 2 </option>
+                                                                  
+                                                                </select>
+                                                            </div>
+                                                </div>
+                                                        
+                                                        <div class="col-lg-6">
+                                                            <select class="form-control" id="sel1" name="choixSemestre">  
+                                                                <option > Semestre 1 </option>
+                                                                <option > Semestre 2  </option>
+                                                                <option > Semestre 3  </option>
+                                                                <option > Semestre 4 </option>
+                                                                <option > Semestre 5 </option>
+                                                                <option > Semestre 6 </option>
+                                                               
+                                                             </select>
+                                                        </div>
                                             </div>
                                         </section>
                                     
