@@ -66,11 +66,8 @@
                                             <thead>
                                                 <tr>
                                                     <th>Departement</th>
-                                                    <th>Filière</th>
-                                                    
                                                     <th>Code Formation</th>
-                                                    <th>Intitué</th>
-                                                    <th>Année Academique </th>
+                                                    <th>Intitué Formation</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -81,14 +78,6 @@
                                                     <td>
                                                         <span>United States</span>
                                                     </td>
-                                                    <td>
-                                                        <div>
-                                                            <div class="progress" style="height: 6px">
-                                                                <div class="progress-bar bg-success" style="width: 50%"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
                                                         <td> 
                                                             <a href=" {{Route('ajoutUE')}} "> <button type="button" class="btn btn-info">Administrer une UE</button> </a>
                                                             <a href="{{Route('editFormation')}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>

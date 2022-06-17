@@ -73,14 +73,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title" style="text-align: center">Ajouter une formation</h4>
-                                <form action="{{ Route('register') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <form action="{{ Route('formationRegister') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <input type="" name="etablissement"  disabled value="{{$Etablissement->sigle}}" class="form-control" placeholder="Etablissement" required>
+                                                        <input type="" name="filiere"  disabled value="" class="form-control" placeholder="" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
@@ -95,39 +95,30 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <input type="text" name="anneeAcademique " class="form-control" placeholder="Année Academique" required>
+                                                        <select class="form-control" id="sel1" name="choix">
+                                                           <option > Licence 1 </option>
+                                                           <option > Licence 2  </option>
+                                                           <option > Licence 3  </option>
+                                                           <option >  Master 1 </option>
+                                                           <option >  Master 2 </option>
+                                                        </select>
                                                     </div>
-                                                </div>
+                                        </div>
                                             </div>
                                         </section>
                                         <section>
                                             <div class="row">
-                                                <div class="col-lg-6">
-                                                        
+                                                        <div class="col-lg-6">
                                                             <div class="form-group">
-                                                                {{-- <label>Selectionner le UE:</label> --}}
-                                                                <select class="form-control" id="sel1" name="choix">
-                                                                   
-                                                                   <option > Licence 1 </option>
-                                                                   <option > Licence 2  </option>
-                                                                   <option > Licence 3  </option>
-                                                                   <option >  Master 1 </option>
-                                                                   <option >  Master 2 </option>
-                                                                  
+                                                                <select class="form-control" id="sel1" name="choixSemestre">  
+                                                                    <option > Semestre 1 </option>
+                                                                    <option > Semestre 2  </option>
+                                                                    <option > Semestre 3  </option>
+                                                                    <option > Semestre 4 </option>
+                                                                    <option > Semestre 5 </option>
+                                                                    <option > Semestre 6 </option>
                                                                 </select>
                                                             </div>
-                                                </div>
-                                                        
-                                                        <div class="col-lg-6">
-                                                            <select class="form-control" id="sel1" name="choixSemestre">  
-                                                                <option > Semestre 1 </option>
-                                                                <option > Semestre 2  </option>
-                                                                <option > Semestre 3  </option>
-                                                                <option > Semestre 4 </option>
-                                                                <option > Semestre 5 </option>
-                                                                <option > Semestre 6 </option>
-                                                               
-                                                             </select>
                                                         </div>
                                             </div>
                                         </section>
@@ -164,24 +155,19 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th>Etablisseent</th>
-                                                                    <th>Departement</th>
-                                                                    
-                                                                    <th>Intitué</th>
+                                                                    <th>Intitué Formation</th>
                                                                     <th>Niveau</th>
-                                                                    <th>Année Academique</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <td>ST</td>
-                                                                    <td>ST</td>
                                                                     <td>
-                                                                        <span>Info</span>
+                                                                        <span>ST</span>
                                                                     </td>
                                                                     <td>
-                                                                        L1S1
+                                                                        Info
                                                                     </td>
-                                                                    <td>2022-2023</td>
+                                                                    <td>Licence-1 Semestre-1</td>
                                                                 </tr>
                                                                
                                                                

@@ -74,8 +74,9 @@
                                         <table class="table table-xs mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Intitué</th>
+                                                    <th>Etablissement</th>
                                                     <th>Sigle</th>
+                                                    {{-- <th>Departement</th> --}}
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -92,9 +93,13 @@
                                                     <td>
                                                         <span>{{ $Etablissement->sigle }} </span>
                                                     </td>
+                                                    {{-- <td>
+                                                        <span>{{$Etablissement->departements->intituleDepartement}}; </span>
+                                                    </td> --}}
                                                 
                                                         <td> 
-                                                            <a href="{{Route('formation',['id'=>$Etablissement->id])}}"> <button type="button" class="btn btn-info">Ajouter une Formation</button> </a>
+                                                            {{-- ,['id'=>$Etablissement->id] --}}
+                                                            <a href="{{Route('formation')}}"> <button type="button" class="btn btn-info">Ajouter une Formation</button> </a>
                                                             <a href="{{Route('editEtablissement',['id'=>$Etablissement->id])}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>
                                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button>
                                                             <!-- Modal -->

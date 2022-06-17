@@ -71,24 +71,17 @@
                     <div class="col-lg-8 mt-4">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title" style="text-align: center">MODIFICATION D'UNE UE</h4>
-                                <form action=" {{Route('updatUe',['id'=>$UE->id])}} " id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <h4 class="card-title" style="text-align: center">MODIFICATION D'UNE ANNEE ACADEMIQUE</h4>
+                                <form action=" {{Route('updatAnnee',['id'=>$Annee->id])}} " id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="text" name="ue"  value="{{$UE->intituleUE}}" class="form-control" placeholder="Intitué de l UE" required>
+                                                        <input type="text" name="annee"  value="{{$Annee->AnneeAcademique}}" class="form-control" placeholder="Année Academique" required>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <input type="number" name="credit" value="{{$UE->creditUE}}" class="form-control" placeholder="Credit de l'UE" required>
-                                                    </div>
-                                                </div>
-                                               
-                                                
+                                                </div> 
                                             </div>
                                         </section>
                                     <div class="row">

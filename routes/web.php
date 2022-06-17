@@ -107,7 +107,7 @@ Route::get('DeletEcue/{id}',[EtablissementController::class,'DeletEcue'])->name(
 Route::get('Annee',[EtablissementController::class ,'Annee'])->name('annee');
 Route::get('ListAnnee',[EtablissementController::class ,'ListAnnee'])->name('listAnnee');
 Route::post('AnneeRegister',[EtablissementController::class,'AnneeRegister'])->name('anneeRegister');
-Route::get('EditAnnee/{id}',[EtablissementController::class,'EditEcue'])->name('editEcue');
+Route::get('EditAnnee/{id}',[EtablissementController::class,'EditAnnee'])->name('editAnnee');
 Route::post('UpdatAnnee/{id}',[EtablissementController::class,'UpdatAnnee'])->name('updatAnnee');
 Route::get('DeletAnnee/{id}',[EtablissementController::class,'DeletAnnee'])->name('deletAnnee');
 
@@ -115,9 +115,9 @@ Route::get('DeletAnnee/{id}',[EtablissementController::class,'DeletAnnee'])->nam
 
 
                     // ============ Formations ===============
-Route::get('Formation/{id}',[ActivitePedagogiqueController::class,'Formation'])->name('formation');
+Route::get('Formation',[ActivitePedagogiqueController::class,'Formation'])->name('formation');
 Route::get('ListeFormation',[ActivitePedagogiqueController::class ,'ListeFormation'])->name('listeFormation');
-Route::get('AjoutUE',[ActivitePedagogiqueController::class ,'AjoutUE'])->name('ajoutUE');
+Route::post('FormationRegister',[ActivitePedagogiqueController::class ,'FormationRegister'])->name('formationRegister');
 Route::get('EditFormation',[ActivitePedagogiqueController::class ,'EditFormation'])->name('editFormation');
 //Route::post('',[ActivitePedagogiqueController::class,''])->name('');
 //Route::post('',[ActivitePedagogiqueController::class,''])->name('');

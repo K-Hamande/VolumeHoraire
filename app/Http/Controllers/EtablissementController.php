@@ -287,8 +287,8 @@ class EtablissementController extends Controller
 
         public function ListAnnee()
         {
-            $ListAnnee = AnneeAcademique::all();
-            return view('AnneeAcademique.ListEcue',compact('ListAnnee'));
+            $Annee = AnneeAcademique::all();
+            return view('AnneeAcademique.ListAnnee',compact('Annee'));
         }
 
         public function EditAnnee($id)

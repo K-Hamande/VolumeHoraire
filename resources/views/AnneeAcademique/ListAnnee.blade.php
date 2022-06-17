@@ -57,7 +57,7 @@
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{Route('Accueil')}}">Accueil</a></li>
-                        <li class="breadcrumb-item active"><a href="{{Route('ue')}}"> Ajout UE </a></li>
+                        <li class="breadcrumb-item active"><a href="{{Route('annee')}}"> Ajout d'Année Academique</a></li>
                     </ol>
                 </div>
             </div>
@@ -65,10 +65,11 @@
             <div class="container-fluid mt-3">
 
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title" style="text-align: center"> LISTE DES UE </h4>
+                                <h4 class="card-title" style="text-align: center"> LISTE ANNEE ACADEMIQUE </h4>
                                 <div class="active-member">
                                     <div class="table-responsive">
                                         <table class="table table-xs mb-0">
@@ -77,8 +78,7 @@
                                             <thead>
                                                 <tr>
                                                     
-                                                    <th>Intitulé</th>
-                                                    <th>Credit</th>
+                                                    <th>Année Academique</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -91,13 +91,10 @@
                                                     <td>
                                                          <span>{{$Values->AnneeAcademique}} </span> 
                                                     </td>
-                                                    <td>
-                                                        <span>{{$Values->creditUE}}</span> 
-                                                    </td>
                                                 
                                                         <td> 
                                                             {{-- <a href=" {{Route('ajoutUE')}} "> <button type="button" class="btn btn-info">Administrer une UE</button> </a> --}}
-                                                            <a href="{{Route('editUe',['id'=>$Values->id])}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>
+                                                            <a href="{{Route('editAnnee',['id'=>$Values->id])}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>
                                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button>
                                                             <!-- Modal -->
                                                             <div class="modal fade" id="exampleModalCenter">
@@ -113,7 +110,7 @@
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-info" data-dismiss="modal">NON</button>
-                                                                        <a href="{{Route('deletUe',['id'=>$Values->id])}}"><button type="button" class="btn btn-danger">OUI</button></a>
+                                                                        <a href="{{Route('deletAnnee',['id'=>$Values->id])}}"><button type="button" class="btn btn-danger">OUI</button></a>
                                                                     </div>
                                                                     </div>       
                                                             </div>
@@ -133,9 +130,8 @@
                         </div>                        
                     </div>
                 </div>
-
-            
-            </div>
+        </div>
+        <div class="col-lg-2"></div>
         </div>
             <!-- #/ container -->
         <!--**********************************

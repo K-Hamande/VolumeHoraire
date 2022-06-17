@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ufr;
+use App\Models\Niveau;
+use App\Models\Filiere;
+use App\Models\Formation;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ActivitePedagogiqueController extends Controller
@@ -44,10 +48,34 @@ class ActivitePedagogiqueController extends Controller
     // ======================= Formation =================
 
 
-    public function Formation($id)
+    public function Formation()
     {
-        $Etablissement = Ufr::findOrFail($id);
-        return view('Formations.Formation',compact('Etablissement'));
+        //$Filiere = Filiere::findOrFail($id);
+        return view('Formations.Formation');
+    }
+
+    public function FormationRegister(Request $request)
+    {
+        //$id = $request->filiere;
+        //$Filiere = Filiere::findOrFail($id);
+       // dd($Filiere);
+        $Formation = new Formation();
+        $Niveau = new Niveau();
+        $Formation->intituleFormation = $request->intituleFormation;
+        $Formation->CodeFormation = $request->codeFormation;
+        $Niveau->intituleNiveau = $request->choix;
+        $Niveau->semestre = $request->choixSemestre;
+        $First=Str::of($request->choix)->limit(1,'');
+        $Last=Str::substr($request->choix,-1);
+        $semestreFirst=Str::of($request->choixSemestre)->limit(1,'');
+        $semestreLast=Str::substr($request->choixSemestre,-1);
+        $Abreviation = $First.$Last.$semestreFirst. $semestreLast;
+        $Niveau->abreviation = $Abreviation;
+        $Niveau->save();
+        $Formation->save();
+        $Formation->Niveaux()->attach($Niveau);
+        //$Formation->Roles()->attach($Filiere);
+        return redirect('/Formation');
     }
 
 
