@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ufrs', function (Blueprint $table) {
-            $table->id();
-            $table->string('intitule')->unique();
-            $table->string('sigle')->unique();
-            $table->timestamps();
+        Schema::create('formation_ue', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('formation_id')->unsigned();
+            $table->integer('ue_id')->unsigned();
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ufrs');
+        Schema::dropIfExists('formation_ue');
     }
 };

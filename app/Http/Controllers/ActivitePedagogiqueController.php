@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ue;
 use App\Models\Ufr;
 use App\Models\Annee;
 use App\Models\Niveau;
@@ -88,16 +89,29 @@ class ActivitePedagogiqueController extends Controller
 
 
 
-    public function AjoutUE()
+
+    public function EditFormation($id)
     {
-        return view('Formations.AjouteUE');
+       $Formation = Formation::findOrFail($id);
+       
+       return view('Formations.EditFormation',compact('Formation'));
+    }
+
+    public function UpdatFormation(Request $request ,$id)
+    {
+       $Formation = Formation::findOrFail($id);
+       $Formation->intituleFormation = $request->intituleFormation;
+       $Formation->codeFormation = $request->codeFormation;
+       $Formation->update();
+     return redirect('/ListFormation');
     }
 
 
-
-    public function EditFormation()
+    public function AddFormationUe($id)
     {
-        return view('Formations.EditFormation');
+        $Formation = Formation::findOrFail($id);
+        $Ue = Ue::all();
+        return view('Formations.AddFormationUe',compact('Formation','Ue'));
     }
 
 

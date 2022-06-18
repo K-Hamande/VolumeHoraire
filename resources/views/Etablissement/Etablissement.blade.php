@@ -58,7 +58,7 @@
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{Route('Accueil')}}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{Route('Accueil')}}">Accueil</a></li>
                         <li class="breadcrumb-item active"><a href="{{Route('listEtablissement')}}">liste des établissements</a></li>
                     </ol>
                 </div>

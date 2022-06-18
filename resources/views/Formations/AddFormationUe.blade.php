@@ -59,7 +59,7 @@
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{Route('Accueil')}}">Accueil</a></li>
-                        <li class="breadcrumb-item active"><a href="{{Route('listAnnee')}}">Liste des Années Academique</a></li>
+                        {{-- <li class="breadcrumb-item active"><a href="{{Route('listFiliere')}}">liste des filières</a></li> --}}
                     </ol>
                 </div>
             </div>
@@ -71,17 +71,31 @@
                     <div class="col-lg-8 mt-4">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title" style="text-align: center">MODIFICATION D'UNE ANNEE ACADEMIQUE</h4>
-                                <form action=" {{Route('updatAnnee',['id'=>$Annee->id])}} " id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <h4 class="card-title" style="text-align: center"> Ajout d'UE </h4>
+                                <form action=" {{Route('filiereRegister')}} " id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
                                             <div class="row">
+                                               
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="text" name="annee"  value="{{$Annee->annee}}" class="form-control" placeholder="Année Academique" required>
+                                                        <input type="text" name="intitule" disabled value="{{$Formation->intituleFormation}}" class="form-control" placeholder="Intitulé de la filière" required>
                                                     </div>
-                                                </div> 
+                                                </div>
+
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Selectionner l'UE :</label>
+                                                        <select class="form-control" id="sel1" name="ue">
+                                                            @foreach($Ue as $Ues)
+                                                            <option value="{{$Ues->id}}"> {{$Ues->intituleUE}} </option>
+                                                            @endforeach
+                                                           
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                               
                                             </div>
                                         </section>
                                     <div class="row">
@@ -90,7 +104,7 @@
                                         </div>
                                         <div class="col-lg-4">
         
-                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">MODIFIER</button>
+                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">ENREGISTRER</button>
                                         </div>
                                         <div class="col-lg-4">
                                         </div>

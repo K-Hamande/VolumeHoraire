@@ -69,7 +69,8 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title" style="text-align: center">Ajouter une formation</h4>
@@ -150,48 +151,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-2"></div>
                 </div>
-{{-- ====================================================================================== --}}
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title" style="text-align: center">Liste des formations</h4>
 
-                                {{-- ================================================== --}}
-
-
-                                <div class="active-member">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-xs mb-0">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Etablisseent</th>
-                                                                    <th>Formation</th>
-                                                                    <th>Année </th>
-                                                                    <th>Niveau</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <span>ST</span>
-                                                                    </td>
-                                                                    
-                                                                    <td>
-                                                                        Info
-                                                                    </td>
-                                                                    <td>
-                                                                        <span>2021-2022</span>
-                                                                    </td>
-                                                                    <td>L1S1</td>
-                                                                </tr>
-                                                               
-                                                               
-                                                            </tbody>
-                                                        </table>
-                                </div>
-
-                                {{-- ================================================================================ --}}
                             </div>
                         </div>
                     </div>

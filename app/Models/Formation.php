@@ -34,4 +34,10 @@ class Formation extends Model
     {
         return $this->belongsTo(Annee::class);
     }
+
+
+    public function ues():BelongsToMany
+    {
+        return $this->belongsToMany(Ue::class);
+    }
 }
