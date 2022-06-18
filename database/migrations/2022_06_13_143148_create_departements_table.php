@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('departements', function (Blueprint $table) {
             $table->id();
-            $table->string('intituleDepartement');
+            $table->string('intituleDepartement')->unique();
             $table-> foreignId('ufr_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

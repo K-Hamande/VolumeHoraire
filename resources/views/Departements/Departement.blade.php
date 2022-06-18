@@ -83,7 +83,7 @@
                                                         <select class="form-control" id="sel1" name="choixDep">
                                                             @foreach ($ListEtablissement as $Etablissement)
                                                             <option value="{{$Etablissement->id}}">
-                                                                 {{$Etablissement->intitule}}  
+                                                                 {{$Etablissement->sigle}}  
                                                             </option>
                                                             @endforeach
                                                         </select>

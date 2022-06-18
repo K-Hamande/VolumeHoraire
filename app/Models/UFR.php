@@ -21,3 +21,4 @@ class Ufr extends Model
         return $this->hasMany(Departement::class);
     }
 }
+

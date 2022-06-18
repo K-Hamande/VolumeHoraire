@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('ecues', function (Blueprint $table) {
             $table->id();
             $table->string('intituleEcue');
-            $table->string('codeEcue');
+            $table->string('codeEcue')->unique();
             $table->foreignId('ue_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

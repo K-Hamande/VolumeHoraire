@@ -95,12 +95,12 @@
                                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            <h5 class="modal-title"> Suppression d'un Etablissement</h5>
+                                                                            <h5 class="modal-title"> Suppression d'une Filière</h5>
                                                                             <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                                                             </button>
                                                                         </div>
                                                                         <div class="modal-body" style="color: red">
-                                                                            Voulez vous vraiment supprimer l etablissement  ?
+                                                                            Voulez vous vraiment supprimer la  Filière  ?
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-info" data-dismiss="modal">NON</button>

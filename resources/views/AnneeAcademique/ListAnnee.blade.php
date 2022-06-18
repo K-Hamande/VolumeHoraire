@@ -69,7 +69,7 @@
                     <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title" style="text-align: center"> LISTE ANNEE ACADEMIQUE </h4>
+                                <h4 class="card-title" style="text-align: center"> LISTE ANNEES ACADEMIQUE </h4>
                                 <div class="active-member">
                                     <div class="table-responsive">
                                         <table class="table table-xs mb-0">
@@ -89,13 +89,13 @@
                                                 <tr>
                                                    
                                                     <td>
-                                                         <span>{{$Values->AnneeAcademique}} </span> 
+                                                         <span>{{$Values->annee}} </span> 
                                                     </td>
                                                 
                                                         <td> 
                                                             {{-- <a href=" {{Route('ajoutUE')}} "> <button type="button" class="btn btn-info">Administrer une UE</button> </a> --}}
                                                             <a href="{{Route('editAnnee',['id'=>$Values->id])}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>
-                                                           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button>
+                                                           {{-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button>
                                                             <!-- Modal -->
                                                             <div class="modal fade" id="exampleModalCenter">
                                                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -114,7 +114,7 @@
                                                                     </div>
                                                                     </div>       
                                                             </div>
-                                                            </div>
+                                                            </div> --}}
                                                     </td>
                                                 </tr>
                                                     

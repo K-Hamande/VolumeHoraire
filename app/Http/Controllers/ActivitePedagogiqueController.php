@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ufr;
+use App\Models\Annee;
 use App\Models\Niveau;
 use App\Models\Filiere;
 use App\Models\Formation;
@@ -48,20 +49,20 @@ class ActivitePedagogiqueController extends Controller
     // ======================= Formation =================
 
 
-    public function Formation()
+    public function Formation($id)
     {
-        //$Filiere = Filiere::findOrFail($id);
-        return view('Formations.Formation');
+        $Filiere = Filiere::findOrFail($id);
+        $annee = Annee::all();
+        return view('Formations.Formation',compact('Filiere','annee'));
     }
 
-    public function FormationRegister(Request $request)
+    public function FormationRegister(Request $request ,$id)
     {
-        //$id = $request->filiere;
-        //$Filiere = Filiere::findOrFail($id);
-       // dd($Filiere);
+        $Filiere = Filiere::findOrFail($id);
         $Formation = new Formation();
         $Niveau = new Niveau();
         $Formation->intituleFormation = $request->intituleFormation;
+        $Formation->annee_id = $request->annee;
         $Formation->CodeFormation = $request->codeFormation;
         $Niveau->intituleNiveau = $request->choix;
         $Niveau->semestre = $request->choixSemestre;
@@ -74,14 +75,15 @@ class ActivitePedagogiqueController extends Controller
         $Niveau->save();
         $Formation->save();
         $Formation->Niveaux()->attach($Niveau);
-        //$Formation->Roles()->attach($Filiere);
-        return redirect('/Formation');
+        $Formation->Filieres()->attach($Filiere);
+        return redirect('/ListFormation');
     }
 
 
-    public function ListeFormation()
+    public function ListFormation()
     {
-        return view('Formations.ListeFormation');
+        $Formation = Formation::all();
+        return view('Formations.ListFormation',compact('Formation'));
     }
 
 

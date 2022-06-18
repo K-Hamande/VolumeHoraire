@@ -74,32 +74,25 @@
                                         <table class="table table-xs mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Etablissement</th>
-                                                    <th>Sigle</th>
-                                                    {{-- <th>Departement</th> --}}
-                                                    <th>Action</th>
+                                                    <th>Etablissements</th>
+                                                    <th>Sigles</th>
+                                                    <th>Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
 
                                                 @forelse  ($ListEtablissement as $Etablissement)
-
-                                                
                                                 <tr>
                                                    
                                                     <td>
-                                                        <span>{{ $Etablissement->intitule }} </span>
+                                                        <span>{{ $Etablissement->intitule}} </span>
                                                     </td>
                                                     <td>
                                                         <span>{{ $Etablissement->sigle }} </span>
                                                     </td>
-                                                    {{-- <td>
-                                                        <span>{{$Etablissement->departements->intituleDepartement}}; </span>
-                                                    </td> --}}
-                                                
                                                         <td> 
-                                                            {{-- ,['id'=>$Etablissement->id] --}}
-                                                            <a href="{{Route('formation')}}"> <button type="button" class="btn btn-info">Ajouter une Formation</button> </a>
+                                                            
+                                                            {{-- <a href="{{Route('formation',['id'=>$filiere->id])}}"> <button type="button" class="btn btn-info">Ajouter une Formation</button> </a> --}}
                                                             <a href="{{Route('editEtablissement',['id'=>$Etablissement->id])}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>
                                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button>
                                                             <!-- Modal -->
@@ -123,7 +116,7 @@
                                                             </div>
                                                     </td>
                                                 </tr>
-                                                    
+
                                                 @empty
                                                     
                                                 @endforelse

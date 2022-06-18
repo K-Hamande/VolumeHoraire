@@ -13,9 +13,9 @@ class Departement extends Model
 
     protected $table = 'departements';
 
-    protected $primaryKey = 'id';
+     protected $primaryKey = 'id';
 
-    protected $fillable = ['intituleDepartement','ufr_id'];
+    protected $fillable = ['intituleDepartement'];
 
 
     public function ufr()

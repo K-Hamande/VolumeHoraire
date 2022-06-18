@@ -40,9 +40,8 @@
                             <i class="icon-copy fa fa-briefcase"></i> <span class="nav-text"> Formation</span>
                         </a>
                         <ul aria-expanded="false">
-                            {{-- <li><a href="{{Route('formation')}}">Nouvelle Formation</a></li> --}}
-                            <li><a href=" {{Route('listeFormation')}} ">Liste des formations</a></li>
-                            {{-- <li><a href="./email-compose.html">Compose</a></li> --}}
+                            <li><a href="{{Route('addFormationList')}}">Nouvelle Formation</a></li>
+                            <li><a href=" {{Route('listFormation')}} ">Liste des formations</a></li>
                         </ul>
                     </li>
 

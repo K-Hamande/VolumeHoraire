@@ -14,4 +14,9 @@ class Filiere extends Model
     {
         return $this->belongsTo(Departement::class);
     }
+
+    public function formations()
+    {
+        return $this->belongsToMany(Formation::class);
+    }
 }

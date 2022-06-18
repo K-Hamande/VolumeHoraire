@@ -79,7 +79,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="text" name="annee"  value="{{$Annee->AnneeAcademique}}" class="form-control" placeholder="Année Academique" required>
+                                                        <input type="text" name="annee"  value="{{$Annee->annee}}" class="form-control" placeholder="Année Academique" required>
                                                     </div>
                                                 </div> 
                                             </div>

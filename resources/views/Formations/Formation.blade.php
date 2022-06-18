@@ -61,7 +61,7 @@
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active"><a href=" {{Route('listFormation')}} ">Liste des Formtions</a></li>
                     </ol>
                 </div>
             </div>
@@ -73,14 +73,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title" style="text-align: center">Ajouter une formation</h4>
-                                <form action="{{ Route('formationRegister') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <form action="{{ Route('formationRegister',['id'=>$Filiere->id]) }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <input type="" name="filiere"  disabled value="" class="form-control" placeholder="" required>
+                                                        <input type="" name=""  disabled value="{{$Filiere->intituleFiliere}} " class="form-control" placeholder="" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
@@ -95,6 +95,20 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
+                                                        <select class="form-control" id="sel1" name="annee">
+                                                           @foreach ($annee as $annees)
+                                                           <option value="{{$annees->id}}">{{$annees->annee}}</option>
+                                                           @endforeach
+                                                        </select>
+                                                    </div>
+                                        </div>
+                                            </div>
+                                        </section>
+                                        <section>
+                                            <div class="row">
+
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
                                                         <select class="form-control" id="sel1" name="choix">
                                                            <option > Licence 1 </option>
                                                            <option > Licence 2  </option>
@@ -104,10 +118,7 @@
                                                         </select>
                                                     </div>
                                         </div>
-                                            </div>
-                                        </section>
-                                        <section>
-                                            <div class="row">
+                                                
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <select class="form-control" id="sel1" name="choixSemestre">  
@@ -155,7 +166,8 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th>Etablisseent</th>
-                                                                    <th>Intitué Formation</th>
+                                                                    <th>Formation</th>
+                                                                    <th>Année </th>
                                                                     <th>Niveau</th>
                                                                 </tr>
                                                             </thead>
@@ -164,10 +176,14 @@
                                                                     <td>
                                                                         <span>ST</span>
                                                                     </td>
+                                                                    
                                                                     <td>
                                                                         Info
                                                                     </td>
-                                                                    <td>Licence-1 Semestre-1</td>
+                                                                    <td>
+                                                                        <span>2021-2022</span>
+                                                                    </td>
+                                                                    <td>L1S1</td>
                                                                 </tr>
                                                                
                                                                

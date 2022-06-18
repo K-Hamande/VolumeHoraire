@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('intituleFormation');
             $table->string('codeFormation');
+            $table->foreignId('annee_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

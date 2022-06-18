@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Annee;
 use App\Models\Ue;
 use App\Models\Ufr;
 use App\Models\Ecue;
 use App\Models\Filiere;
 use App\Models\Departement;
 use Illuminate\Http\Request;
-use App\Models\AnneeAcademique;
 
 class EtablissementController extends Controller
 {
@@ -35,6 +35,11 @@ class EtablissementController extends Controller
         {
             $ListEtablissement = Ufr::all();
             return view('Etablissement.ListEtablissement',compact('ListEtablissement'));
+        }
+        public function AddFormationList()
+        {
+            $ListEtablissement = Ufr::all();
+            return view('Etablissement.AddFormationList',compact('ListEtablissement'));
         }
 
         
@@ -270,7 +275,7 @@ class EtablissementController extends Controller
 
        public function Annee()
        {
-        $Annee = AnneeAcademique::all();
+        $Annee = Annee::all();
            return view('AnneeAcademique.Annee',compact('Annee'));
        }
 
@@ -278,8 +283,8 @@ class EtablissementController extends Controller
 
         public function AnneeRegister(Request $request)
         {
-            $Annee = new AnneeAcademique();
-            $Annee->AnneeAcademique = $request->annee;
+            $Annee = new Annee();
+            $Annee->annee = $request->annee;
             $Annee->save();
             return redirect('/Annee');
         }
@@ -287,13 +292,13 @@ class EtablissementController extends Controller
 
         public function ListAnnee()
         {
-            $Annee = AnneeAcademique::all();
+            $Annee = Annee::all();
             return view('AnneeAcademique.ListAnnee',compact('Annee'));
         }
 
         public function EditAnnee($id)
         {
-            $Annee = AnneeAcademique::findOrFail($id);
+            $Annee = Annee::findOrFail($id);
             return view('AnneeAcademique.EditAnnee',compact('Annee'));
         }
 
@@ -301,15 +306,15 @@ class EtablissementController extends Controller
 
         public function UpdatAnnee(Request $request,$id)
         {
-            $Annee = AnneeAcademique::findOrFail($id);
-            $Annee->AnneeAcademique = $request->annee;
+            $Annee = Annee::findOrFail($id);
+            $Annee->annee = $request->annee;
             $Annee->Update();
             return redirect('/ListAnnee');
         }
 
         public function DeletAnnee($id)
         {
-            $Annee = AnneeAcademique::findOrFail($id);
+            $Annee = Annee::findOrFail($id);
             $Annee->delete();
             return redirect('/ListAnnee');
 
