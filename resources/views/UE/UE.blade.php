@@ -79,6 +79,16 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
+                                                        <label>Selectionner la Filiere:</label>
+                                                        <select class="form-control" id="sel1" name="filiere">
+                                                           @foreach($Filiere as $Filiere)
+                                                           <option value="{{$Filiere->id }}"> {{$Filiere->intituleFiliere }} </option>
+                                                           @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
                                                         <input type="text" name="ue" class="form-control" placeholder="Intitué de l UE" required>
                                                     </div>
                                                 </div>

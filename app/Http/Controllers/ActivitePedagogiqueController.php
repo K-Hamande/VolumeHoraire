@@ -110,8 +110,24 @@ class ActivitePedagogiqueController extends Controller
     public function AddFormationUe($id)
     {
         $Formation = Formation::findOrFail($id);
-        $Ue = Ue::all();
-        return view('Formations.AddFormationUe',compact('Formation','Ue'));
+        $Filiere = Filiere::all();
+        return view('Formations.AddFormationUe',compact('Formation','Filiere'));
+    }
+
+
+    public function AddUe(Request $request , $id)
+    {
+        $Ue = $request->ue;
+        $Formation = Formation::findOrFail($id);
+        $Formation->ues()->attach($Ue);
+        return redirect('/AddList');
+
+    }
+
+    public function AddList()
+    {
+        $Formation= Formation::all();
+        return view('Formations.AddList',compact('Formation'));
     }
 
 

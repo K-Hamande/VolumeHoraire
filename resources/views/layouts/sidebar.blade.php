@@ -53,7 +53,7 @@
                             <li>
                                 <li class="mega-menu mega-menu-sm">
                                     <a class="has-arrow"" aria-expanded="false">
-                                        <span class="nav-text">Ajouter un enseignant </span>
+                                        <span class="nav-text">Enregistrement</span>
                                     </a>
                                     <ul aria-expanded="false">
                                         <li><a href="{{Route('permanent')}}">Permanent </a></li>
@@ -72,6 +72,7 @@
                             <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Délegués</span>
                         </a>
                         <ul aria-expanded="false">
+                            <li><a href="{{Route('enseignantActivite')}}">Enregistrement</a></li>
                             <li><a href="{{Route('enseignantActivite')}}">Activité En cours </a></li>
                             <li><a href="{{Route('enseignantActivite')}}">Activité Terminée</a></li>
                         </ul>

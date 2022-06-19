@@ -9,6 +9,7 @@ use App\Models\Ecue;
 use App\Models\Filiere;
 use App\Models\Departement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class EtablissementController extends Controller
 {
@@ -172,7 +173,8 @@ class EtablissementController extends Controller
 
        public function UE()
        {
-           return view('UE.ue');
+            $Filiere = Filiere::all();
+            return view('UE.ue',compact('Filiere'));
        }
 
 
@@ -180,10 +182,12 @@ class EtablissementController extends Controller
         public function UERegister(Request $request)
         {
             $UE = new  Ue();
+            $Filiere = Filiere::findOrFail($request->filiere);
             $UE->intituleUE = $request->ue;
             $UE->creditUE = $request->credit;
             $UE->save();
-            return view('UE.ue');
+            $UE->filieres()->attach($Filiere);
+            return Redirect('/UE');
 
         }
 
@@ -195,8 +199,9 @@ class EtablissementController extends Controller
 
         public function EditUe($id)
         {
+            $Filiere = Filiere::all();
             $UE = Ue::findOrFail($id);
-            return view('UE.EditUe',compact('UE') );
+            return view('UE.EditUe',compact('UE','Filiere'));
         }
 
 

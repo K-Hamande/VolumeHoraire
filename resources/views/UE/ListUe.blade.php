@@ -77,7 +77,8 @@
                                             <thead>
                                                 <tr>
                                                     
-                                                    <th>Intitulé</th>
+                                                    <th>Filière</th>
+                                                    <th>UE</th>
                                                     <th>Credit</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -86,8 +87,13 @@
 
                                                 @forelse($Liste as $Values)
 
-                                                <tr>
+                                                    @foreach ($Values->filieres as $filiere)
+
+                                                 <tr>
                                                    
+                                                    <td>
+                                                         <span>{{$filiere->intituleFiliere}} </span> 
+                                                    </td>
                                                     <td>
                                                          <span>{{$Values->intituleUE}} </span> 
                                                     </td>
@@ -120,6 +126,7 @@
                                                             </div>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                                     
                                                 @empty
                                                     

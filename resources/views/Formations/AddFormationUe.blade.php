@@ -72,7 +72,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title" style="text-align: center"> Ajout d'UE </h4>
-                                <form action=" {{Route('filiereRegister')}} " id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <form action=" {{Route('addUe',['id'=>$Formation->id])}} " id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
@@ -88,8 +88,10 @@
                                                     <div class="form-group">
                                                         <label>Selectionner l'UE :</label>
                                                         <select class="form-control" id="sel1" name="ue">
-                                                            @foreach($Ue as $Ues)
-                                                            <option value="{{$Ues->id}}"> {{$Ues->intituleUE}} </option>
+                                                            @foreach($Filiere as $filiere)
+                                                                @foreach ($filiere->ues as $Ue)
+                                                                    <option value="{{$Ue->id}}"> {{$Ue->intituleUE}} </option>
+                                                                @endforeach
                                                             @endforeach
                                                            
                                                         </select>

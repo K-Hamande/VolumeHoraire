@@ -122,7 +122,8 @@ Route::post('FormationRegister/{id}',[ActivitePedagogiqueController::class ,'For
 Route::get('EditFormation/{id}',[ActivitePedagogiqueController::class ,'EditFormation'])->name('editFormation');
 Route::post('UpdatFormation/{id}',[ActivitePedagogiqueController::class ,'UpdatFormation'])->name('updatFormation');
 Route::get('AddFormationUe/{id}',[ActivitePedagogiqueController::class,'AddFormationUe'])->name('addFormationUe');
-//Route::post('',[ActivitePedagogiqueController::class,''])->name('');
+Route::post('AddUe/{id}',[ActivitePedagogiqueController::class,'AddUe'])->name('addUe');
+Route::get('AddList',[ActivitePedagogiqueController::class,'AddList'])->name('addList');
 
 
 

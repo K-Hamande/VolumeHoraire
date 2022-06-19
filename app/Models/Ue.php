@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Ecue;
+use App\Models\Filiere;
 use App\Models\Formation;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,6 +22,11 @@ class Ue extends Model
     public function formations():BelongsToMany
     {
         return $this->belongsToMany(Formation::class);
+    }
+
+    public function filieres():BelongsToMany
+    {
+        return $this->belongsToMany(Filiere::class);
     }
 }
 

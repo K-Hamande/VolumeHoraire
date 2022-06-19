@@ -61,7 +61,7 @@
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{Route('Accueil')}} ">Accueil</a></li>
-                        <li class="breadcrumb-item active"><a href=" {{Route(listeFormation)}} ">Liste des Formations</a></li>
+                        <li class="breadcrumb-item active"><a href=" {{Route('listFormation')}} ">Liste des Formations</a></li>
                     </ol>
                 </div>
             </div>

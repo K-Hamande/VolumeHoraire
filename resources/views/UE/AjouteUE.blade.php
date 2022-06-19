@@ -77,6 +77,14 @@
                                     @csrf
                                     <div>
                                         <section>
+                                            <div class="form-group">
+                                                <label>Selectionner la Filiere:</label>
+                                                <select class="form-control" id="sel1" name="filiere">
+                                                   @foreach($Filiere as $Filiere)
+                                                   <option value="{{$Filiere->id }}"> {{$Filiere->intituleFiliere }} </option>
+                                                   @endforeach
+                                                </select>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
