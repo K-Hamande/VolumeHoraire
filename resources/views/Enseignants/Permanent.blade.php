@@ -79,7 +79,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="text" name="name" class="form-control" placeholder="Nom" required>
+                                                        <input type="text" name="nom" class="form-control" placeholder="Nom" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
@@ -110,13 +110,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <label>Responsabilité:</label>
-                                                        <select class="form-control" id="sel1" name="intituleRole">
-                                                            <option>1</option>
-                                                            <option>1</option>
-                                                            <option>1</option>
-                                                            <option>1</option>
-                                                        </select>
+                                                        <input type="text" name="responsabilite" class="form-control" placeholder="Responsabilité" required>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -126,21 +120,20 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Grade:</label>
-                                                        <select class="form-control" id="sel1" name="intituleRole">
-                                                            <option>1</option>
-                                                            <option>1</option>
-                                                            <option>1</option>
-                                                            <option>1</option>
+                                                        <select class="form-control" id="sel1" name="grade">
+                                                            @foreach ($Grade as $Grade)
+                                                            <option value="{{$Grade->id}}" > {{$Grade->intituleGrade}} </option>
+                                                            @endforeach
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label>Selectionner l'UFR:</label>
+                                                        <label>Selectionner l'etablissement:</label>
                                                         <select class="form-control" id="sel1" name="ufr">
-                                                            <option>ST</option>
-                                                            <option>SJP</option>
-                                                            <option>SEG</option>
+                                                           @foreach ($Ufr as $Etablissement)
+                                                           <option value="{{$Etablissement->id}} " > {{$Etablissement->intitule}} || {{ $Etablissement->sigle}} </option>
+                                                           @endforeach
                                                         </select>
                                                     </div>
                                                 </div>

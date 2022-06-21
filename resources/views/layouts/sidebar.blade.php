@@ -64,7 +64,6 @@
                             </li>
                             <li><a href="{{Route('listeEnseignant')}}">liste des Enseignant</a></li>
                             <li><a href="{{Route('enseignantActivite')}}">Activité En cours </a></li>
-                            <li><a href="{{Route('enseignantActivite')}}">Activité Terminée</a></li>
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">
@@ -74,7 +73,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{Route('enseignantActivite')}}">Enregistrement</a></li>
                             <li><a href="{{Route('enseignantActivite')}}">Activité En cours </a></li>
-                            <li><a href="{{Route('enseignantActivite')}}">Activité Terminée</a></li>
+                            
                         </ul>
                     </li>
 
@@ -85,6 +84,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{Route('createUser')}}">Utilisateur</a></li>
                             <li><a href="{{Route('etablissement')}}">Etablissement</a></li>
+                            <li><a href="{{Route('grade')}}">Grade Enseignant</a></li>
                             <li><a href="{{Route('departement')}}">Département</a></li>
                             <li><a href="{{Route('filiere')}}">Filière</a></li>
                             <li><a href="{{Route('ue')}}">UE</a></li>
