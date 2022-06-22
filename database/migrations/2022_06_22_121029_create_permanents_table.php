@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->foreignId('ufr_id')->constrained()->onDelete('cascade');
             $table->foreignId('grade_id')->constrained()->onDelete('cascade');
-            $table->foreignId('reponsabilite_id')->constrained()->onDelete('cascade');
+            $table->foreignId('responsabilite_id')->constrained();
             $table->timestamps();
         });
     }

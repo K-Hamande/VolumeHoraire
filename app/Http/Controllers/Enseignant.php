@@ -35,9 +35,10 @@ class Enseignant extends Controller
         $Responsabilite->intituleResponsabilite = $request->responsabilite;
         $Responsabilite->typeAbattement = $request->type;
         $Responsabilite->abattement = $request->abattement;
-        $Permanent->save();
+        $Permanent->responsabilite()->associate($Permanent);
         $Responsabilite->save();
-        $$Permanent->responsabilite()->associate($Permanent);
+        dd($Permanent);
+        $Permanent->save();
         return  Redirect('/Permanent');
     }
 
