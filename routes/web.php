@@ -136,8 +136,12 @@ Route::get('DeletActivite',[ActivitePedagogiqueController::class,'DeletActivite'
 
 
 
-                    // ============ Enseigants ===============
+                    // ============ Enseigants Permanent ===============
 Route::get('Permanent',[Enseignant::class ,'Permanent'])->name('permanent');
+Route::post('PermanentRegister',[Enseignant::class,'PermanentRegister'])->name('permanentRegister');
+
+
+                        // ====== Enseigants  Vacataire =======
 Route::get('Vacataire',[Enseignant::class ,'Vacataire'])->name('vacataire');
 //Route::get('AddEnseignant',[Enseignant::class ,'AddEnseignant'])->name('addEnseignant');
 Route::get('ListeEnseignant',[Enseignant::class ,'ListeEnseignant'])->name('listeEnseignant');

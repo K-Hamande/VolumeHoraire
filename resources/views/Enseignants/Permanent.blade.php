@@ -72,7 +72,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title" style="text-align: center"> ENSEIGNANT PERMANENT </h4>
-                                <form action="{{ Route('register') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <form action="{{ Route('permanentRegister') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
@@ -89,7 +89,7 @@
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="telephone" name="phone" class="form-control" placeholder="Téléphone" required>
+                                                        <input type="number" name="telephone" class="form-control" placeholder="Téléphone" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
@@ -117,6 +117,22 @@
                                         </section>
                                         <section>
                                             <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>Type d’abattement horaire:</label>
+                                                        <select class="form-control" id="sel1" name="type">
+                                                            <option> Pourcentage(%)</option>
+                                                            <option> Nombre d'heure </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label></label>
+                                                        <input type="number" name="abattement" class="form-control" placeholder="abattement horaire" required>
+                                                    </div>
+                                                </div>
+                                            
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Grade:</label>

@@ -17,10 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('phone');
-            $table->string('matricule');
-            $table->string('email');
-            $table->string('responsabilite');
+            $table->string('telephone');
+            $table->string('matricule')->unique();
+            $table->string('email')->unique();
+            $table->foreignId('ufr_id')->constrained()->onDelete('cascade');
+            $table->foreignId('grade_id')->constrained()->onDelete('cascade');
+            $table->foreignId('reponsabilite_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

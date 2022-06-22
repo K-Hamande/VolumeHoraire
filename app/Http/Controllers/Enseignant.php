@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Ufr;
 use App\Models\Grade;
+use App\Models\Permanent;
 use Illuminate\Http\Request;
+use App\Models\Responsabilite;
 use Illuminate\Support\Facades\Redirect;
 
 class Enseignant extends Controller
@@ -19,11 +21,23 @@ class Enseignant extends Controller
 
 
 
-    public function AddEnseignant(Request $request)
+    public function PermanentRegister(Request $request)
     {
-        $Enseignant = new Enseignant();
-        $Enseignant->nom = $request->nom;
-
+        $Responsabilite = new Responsabilite();
+        $Permanent = new Permanent();
+        $Permanent->nom = $request->nom;
+        $Permanent->prenom = $request->prenom;
+        $Permanent->telephone = $request->telephone;
+        $Permanent->matricule = $request->matricule;
+        $Permanent->email = $request->email;
+        $Permanent->grade_id = $request->grade;
+        $Permanent->ufr_id = $request->ufr;
+        $Responsabilite->intituleResponsabilite = $request->responsabilite;
+        $Responsabilite->typeAbattement = $request->type;
+        $Responsabilite->abattement = $request->abattement;
+        $Permanent->save();
+        $Responsabilite->save();
+        $$Permanent->responsabilite()->associate($Permanent);
         return  Redirect('/Permanent');
     }
 
