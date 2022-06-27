@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('responsabilites', function (Blueprint $table) {
             $table->id();
-            $table->string('intituleResponsabilite');
+            $table->string('intituleResponsabilite')->unique();
             $table->string('typeAbattement');
             $table->integer('abattement');
             $table->timestamps();

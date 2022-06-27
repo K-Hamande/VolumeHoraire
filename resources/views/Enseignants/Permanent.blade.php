@@ -65,6 +65,20 @@
             </div>
             <!-- row -->
 
+            <div class="row">
+                <div class="col lg-2"></div>
+
+                @if (session('Message'))
+                <div   class="alert alert-success text-center">
+                    <div class="col lg-8">
+                        {{session('Message')}}
+                    </div>
+                </div>
+                @endif
+
+                <div class="col lg-2"></div>
+            </div>
+
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg"></div>
@@ -72,30 +86,42 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title" style="text-align: center"> ENSEIGNANT PERMANENT </h4>
-                                <form action="{{ Route('permanentRegister') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <form action="{{Route('permanentRegister') }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="text" name="nom" class="form-control" placeholder="Nom" required>
+                                                        <input type="text" name="nom" class="form-control @error('nom') is-invalid  @enderror " placeholder="Nom" value="{{ old('nom')}}" >
                                                     </div>
+                                                @error('nom')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="text" name="prenom" class="form-control" placeholder="Prénom" required>
+                                                        <input type="text" name="prenom" class="form-control @error('nom') is-invalid  @enderror " placeholder="Prénom"value="{{ old('prenom')}}" >
                                                     </div>
+                                                @error('prenom')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="number" name="telephone" class="form-control" placeholder="Téléphone" required>
+                                                        <input type="number" name="telephone" class="form-control @error('nom') is-invalid  @enderror " placeholder="Téléphone" value="{{ old('telephone')}}">
                                                     </div>
+                                                @error('telephone')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="text" name="matricule" class="form-control" placeholder="Matricule" required>
+                                                        <input type="text" name="matricule" class="form-control @error('nom') is-invalid  @enderror " placeholder="Matricule"value="{{ old('matricule')}}" >
                                                     </div>
+                                                @error('matricule')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                                 </div>
                                             </div>
                                         </section>
@@ -103,36 +129,28 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                                        <input type="email" name="email" class="form-control @error('nom') is-invalid  @enderror " placeholder="Email"  value="{{ old('email')}}">
                                                     </div>
+                                                @error('email')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                                 </div>
                                             </div> 
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="text" name="responsabilite" class="form-control" placeholder="Responsabilité" required>
+                                                        <label>Selectionner la responsabilité:</label>
+                                                        <select class="form-control" id="sel1" name="responsabilite">
+                                                           @foreach ($Responsabilite as $responsabilites)
+                                                           <option value="{{$responsabilites->id}} " > {{$responsabilites->intituleResponsabilite}} </option>
+                                                           @endforeach
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div> 
                                         </section>
                                         <section>
                                             <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label>Type d’abattement horaire:</label>
-                                                        <select class="form-control" id="sel1" name="type">
-                                                            <option> Pourcentage(%)</option>
-                                                            <option> Nombre d'heure </option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label></label>
-                                                        <input type="number" name="abattement" class="form-control" placeholder="abattement horaire" required>
-                                                    </div>
-                                                </div>
-                                            
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Grade:</label>
@@ -142,6 +160,7 @@
                                                             @endforeach
                                                         </select>
                                                     </div>
+                                                    
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">

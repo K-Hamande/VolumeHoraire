@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Grade extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $filable = ['intituleGrade'];
+    protected $table = 'grades';
 
 
     public function Permanents():HasMany

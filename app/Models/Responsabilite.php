@@ -11,7 +11,8 @@ class Responsabilite extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $filable = ['intituleResponsabilite','typeAbattement','abattement'];
+    protected $table = 'responsabilites';
 
     public function permanents():HasMany
     {

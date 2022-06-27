@@ -63,7 +63,7 @@
 
                             </li>
                             <li><a href="{{Route('listeEnseignant')}}">liste des Enseignant</a></li>
-                            <li><a href="{{Route('enseignantActivite')}}">Activité En cours </a></li>
+                            <li><a href="{{Route('responsabilite')}}"> Responsabilité Enseignant </a></li>
                         </ul>
                     </li>
                     <li class="mega-menu mega-menu-sm">

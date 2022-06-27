@@ -163,6 +163,16 @@ Route::get('DeletGrade/{id}',[Enseignant::class,'DeletGrade'])->name('deletGrade
 
 
 
+                    // ============ Responsabilité ===============
+Route::get('Responsabilite',[Enseignant::class ,'Responsabilite'])->name('responsabilite');
+Route::post('ResponsabiliteRegister',[Enseignant::class,'ResponsabiliteRegister'])->name('responsabiliteRegister');
+Route::get('ListResponsabilite',[Enseignant::class ,'ListResponsabilite'])->name('listResponsabilite');
+Route::get('EditResponsabilite/{id}',[Enseignant::class,'EditResponsabilite'])->name('editResponsabilite');
+Route::post('UpdatResponsabilite/{id}',[Enseignant::class,'UpdatResponsabilite'])->name('updatResponsabilite');
+Route::get('DeletResponsabilite/{id}',[Enseignant::class,'DeletGrade'])->name('deletGrade');
+
+
+
 
 
 

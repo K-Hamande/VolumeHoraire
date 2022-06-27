@@ -10,7 +10,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Permanent extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $table = 'permanents';
+    protected $filable = [
+    "nom","prenom","telephone","matricule","email","ufr_id","grade_id","responsabilite_id",
+    ];
 
     public function grade():BelongsTo
     {

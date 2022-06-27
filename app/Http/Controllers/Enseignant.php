@@ -15,7 +15,8 @@ class Enseignant extends Controller
     {
         $Grade = Grade::all();
         $Ufr = Ufr::all();
-        return view('Enseignants.Permanent',compact('Grade','Ufr'));
+        $Responsabilite = Responsabilite::all();
+        return view('Enseignants.Permanent',compact('Grade','Ufr','Responsabilite'));
     }
 
 
@@ -23,7 +24,15 @@ class Enseignant extends Controller
 
     public function PermanentRegister(Request $request)
     {
-        $Responsabilite = new Responsabilite();
+
+        $request->validate([
+        'nom' => 'required|max:255',
+        'prenom' => 'required|max:255',
+        'telephone' => 'required|numeric|unique:permanents| min:8',
+        'matricule' => 'required|alpha_num|unique:permanents',
+        'email'  => 'required|email|unique:permanents',
+        ]);
+
         $Permanent = new Permanent();
         $Permanent->nom = $request->nom;
         $Permanent->prenom = $request->prenom;
@@ -32,14 +41,9 @@ class Enseignant extends Controller
         $Permanent->email = $request->email;
         $Permanent->grade_id = $request->grade;
         $Permanent->ufr_id = $request->ufr;
-        $Responsabilite->intituleResponsabilite = $request->responsabilite;
-        $Responsabilite->typeAbattement = $request->type;
-        $Responsabilite->abattement = $request->abattement;
-        $Permanent->responsabilite()->associate($Permanent);
-        $Responsabilite->save();
-        dd($Permanent);
+        $Permanent->responsabilite_id = $request->responsabilite;
         $Permanent->save();
-        return  Redirect('/Permanent');
+        return  Redirect('/Permanent')->with('Message','enregistrement a été effectué avec succès');
     }
 
 
@@ -109,6 +113,61 @@ class Enseignant extends Controller
           $Grade = Grade::findOrFail($id);
           $Grade->delete();
           return redirect('/ListGrade');
+      }
+          // ==================== Responsabilite ===============
+
+          public function Responsabilite()
+          {
+           
+              return view('Responsabilites.Responsabilite');
+          }
+   
+          
+   
+           public function ListResponsabilite()
+            {
+                $Liste =Responsabilite::all();
+                return view('Responsabilites.ListResponsabilite',compact('Liste'));
+            }
+   
+      public function ResponsabiliteRegister(Request $request)
+          {
+
+            $request->validate([
+                'intituleResponsabilite' => 'required|unique:responsabilites|max:255',
+
+                'abattement'=> 'required|unique:responsabilites'
+
+            ]);
+               $Responsabilite = new Responsabilite();
+               $Responsabilite->intituleResponsabilite = $request->intituleResponsabilite;
+                $Responsabilite->typeAbattement = $request->type;
+                $Responsabilite->abattement = $request->abattement;
+               $Responsabilite->save();
+                return redirect('/Responsabilite')->with('Message','enregistrement a été effectué avec succès') ;
+           }
+   
+     public function EditResponsabilite($id)
+     {
+          $Responsabilite = Responsabilite::findOrFail($id);
+          return view('Responsabilites.EditResponsabilite',compact('Responsabilite'));
+     }
+   
+   
+      public function UpdatResponsabilite(Request $request ,$id)
+      {
+          $Responsabilite =  Responsabilite::findOrFail($id);
+          $Responsabilite->intituleResponsabilite = $request->intitule;
+          $Responsabilite->update();
+     
+          return redirect('/ListResponsabilite');
+      }
+
+      public function DeletResponsabilite($id)
+      {
+          $Responsabilite = Responsabilite::findOrFail($id);
+          $Responsabilite->delete();
+          return redirect('/ListResponsabilite');
       }
 
    
