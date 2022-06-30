@@ -139,12 +139,13 @@ Route::get('DeletActivite',[ActivitePedagogiqueController::class,'DeletActivite'
                     // ============ Enseigants Permanent ===============
 Route::get('Permanent',[Enseignant::class ,'Permanent'])->name('permanent');
 Route::post('PermanentRegister',[Enseignant::class,'PermanentRegister'])->name('permanentRegister');
+Route::get('ListeEnseignant',[Enseignant::class ,'ListeEnseignant'])->name('listeEnseignant');
 
 
                         // ====== Enseigants  Vacataire =======
 Route::get('Vacataire',[Enseignant::class ,'Vacataire'])->name('vacataire');
-//Route::get('AddEnseignant',[Enseignant::class ,'AddEnseignant'])->name('addEnseignant');
-Route::get('ListeEnseignant',[Enseignant::class ,'ListeEnseignant'])->name('listeEnseignant');
+Route::post('VacataireRegister',[Enseignant::class,'VacataireRegister'])->name('vacataireRegister');
+
 Route::get('EnseignantActivite',[Enseignant::class ,'EnseignantActivite'])->name('enseignantActivite');
 // Route::post('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
 //Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('EcueRegister');

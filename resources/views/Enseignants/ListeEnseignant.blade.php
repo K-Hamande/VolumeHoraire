@@ -65,21 +65,36 @@
                                         <table class="table table-xs mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Matricule </th>
+                                                    
                                                     <th>Nom</th>
                                                     <th>Prénom(s)</th>
+                                                    <th>Matricule </th>
                                                     <th>Grade</th>
+                                                    <th>Responsabilite</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                               
+                                                @foreach ($Permanent as $Permanents)
+                                                
+
                                                 <tr>
-                                                    <td><img src="./images/avatar/1.jpg" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
-                                                    <td>iPhone X</td>
                                                     <td>
-                                                        <span>United States</span>
+                                                        <span> {{$Permanents->nom}} </span>
                                                     </td>
-                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
+                                                    <td>
+                                                        <span> {{$Permanents->prenom}} </span>
+                                                    </td>
+                                                    <td>
+                                                        <span> {{$Permanents->matricule}} </span>
+                                                    </td>
+                                                    <td> 
+                                                        <span> {{$Permanents->grade->intituleGrade}} </span>
+                                                    </td>
+                                                    <td>
+                                                        <span> {{$Permanents->responsabilite->intituleResponsabilite}} </span>
+                                                    </td>
                                                         <td> 
                                                             <a href=""> <button type="button" class="btn btn-info">Voir</button> </a>
                                                             <a href=""> <button type="button" class="btn btn-warning">Modifier</button> </a>
@@ -106,6 +121,8 @@
                                                             </div>
                                                     </td>
                                                 </tr>
+
+                                                @endforeach
                                                
                                             </tbody>
                                         </table>

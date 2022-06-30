@@ -91,7 +91,7 @@
                                     <div>
                                         <section>
                                             <div class="row">
-                                                <div class="col-lg-12">
+                                                <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <input type="text" name="nom" class="form-control @error('nom') is-invalid  @enderror " placeholder="Nom" value="{{ old('nom')}}" >
                                                     </div>
@@ -99,15 +99,15 @@
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                                 </div>
-                                                <div class="col-lg-12">
+                                                <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <input type="text" name="prenom" class="form-control @error('nom') is-invalid  @enderror " placeholder="Prénom"value="{{ old('prenom')}}" >
+                                                        <input type="text" name="prenom" class="form-control @error('prenom') is-invalid  @enderror " placeholder="Prénom"value="{{ old('prenom')}}" >
                                                     </div>
                                                 @error('prenom')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                                 </div>
-                                                <div class="col-lg-12">
+                                                <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <input type="number" name="telephone" class="form-control @error('nom') is-invalid  @enderror " placeholder="Téléphone" value="{{ old('telephone')}}">
                                                     </div>
@@ -115,7 +115,7 @@
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                                 </div>
-                                                <div class="col-lg-12">
+                                                <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <input type="text" name="matricule" class="form-control @error('nom') is-invalid  @enderror " placeholder="Matricule"value="{{ old('matricule')}}" >
                                                     </div>
@@ -127,17 +127,18 @@
                                         </section>
                                         <section>
                                             <div class="row">
-                                                <div class="col-lg-12">
+                                                <div class="col-lg-6">
                                                     <div class="form-group">
+                                                        <label>  </label>
                                                         <input type="email" name="email" class="form-control @error('nom') is-invalid  @enderror " placeholder="Email"  value="{{ old('email')}}">
                                                     </div>
                                                 @error('email')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                                 </div>
-                                            </div> 
-                                            <div class="row">
-                                                <div class="col-lg-12">
+                                            
+                                            
+                                                <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Selectionner la responsabilité:</label>
                                                         <select class="form-control" id="sel1" name="responsabilite">

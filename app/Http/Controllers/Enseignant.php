@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Ufr;
 use App\Models\Grade;
 use App\Models\Permanent;
+use App\Models\Vacataire;
 use Illuminate\Http\Request;
 use App\Models\Responsabilite;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
 class Enseignant extends Controller
 {
+
+    // ==================== permanent  ===============
     public function Permanent()
     {
         $Grade = Grade::all();
@@ -18,7 +22,6 @@ class Enseignant extends Controller
         $Responsabilite = Responsabilite::all();
         return view('Enseignants.Permanent',compact('Grade','Ufr','Responsabilite'));
     }
-
 
 
 
@@ -48,17 +51,54 @@ class Enseignant extends Controller
 
 
 
+  // ==================== Vacataire  ===============
+
     public function Vacataire()
     {
-        return view('Enseignants.Vacataire');
+        $Etablissement = Ufr::all();
+        return view('Enseignants.Vacataire',compact('Etablissement'));
     }
 
+      
+
+    public function VacataireRegister(Request $request)
+    {
+
+        $request->validate([
+        'nom' => 'required|max:255',
+        'prenom' => 'required|max:255',
+        'telephone' => 'required|numeric|unique:vacataires| min:8',
+        'autorisation' => 'required|alpha_num|unique:vacataires',
+        'email'  => 'required|email|unique:vacataires',
+        'cnib'  => 'required|alpha_num|unique:vacataires',
+        'fichier' => 'required|mimes:pdf|max:2048'
+        ]);
+        $Vacataire = new Vacataire();
+        $Vacataire->nom = $request->nom;
+        $Vacataire->prenom = $request->prenom;
+        $Vacataire->telephone = $request->telephone;
+        $Vacataire->email = $request->email;
+        $Vacataire->cnib = $request->cnib;
+        $Vacataire->ufr_id = $request->etabissement;
+        $Vacataire->autorisation = $request->autorisation;
+        $fileNameWithExt = $request->file('fichier')->getClientOriginalName();
+        $fileName = pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+        $filExtension = $request->file('fichier')->getClientOriginalExtension();
+        $autorisationFile = $fileName.'_'.time().'.'.$filExtension;
+        $path = $request->file('fichier')->storeAs('public/listeAutorisation',$autorisationFile);
+        $Vacataire->file = $autorisationFile;
+        $Vacataire->save();
+        return  Redirect('/Vacataire')->with('Message','enregistrement a été effectué avec succès');
+         
+    }
 
     
 
     public function ListeEnseignant()
     {
-        return view('Enseignants.ListeEnseignant');
+        $Permanent = Permanent::all();
+        $Vacataire = Vacataire::all();
+        return view('Enseignants.ListeEnseignant' ,compact('Permanent','Vacataire'));
     }
 
     public function EnseignantActivite()
