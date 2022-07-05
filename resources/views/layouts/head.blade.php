@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{asset('./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css')}}">
     <!-- Custom Stylesheet -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/icon-font.min.css')}}" rel="stylesheet">
 
     {{-- ============================= --}}
 

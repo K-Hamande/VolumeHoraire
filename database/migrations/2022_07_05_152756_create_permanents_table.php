@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreignId('ufr_id')->constrained()->onDelete('cascade');
             $table->foreignId('grade_id')->constrained()->onDelete('cascade');
             $table->foreignId('responsabilite_id')->constrained()->onDelete('cascade');
+            $table->foreignId('attribution_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

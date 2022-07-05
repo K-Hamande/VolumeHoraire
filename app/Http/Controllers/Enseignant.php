@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attribution;
 use App\Models\Ufr;
 use App\Models\Grade;
 use App\Models\Permanent;
@@ -176,7 +177,7 @@ class Enseignant extends Controller
             $request->validate([
                 'intituleResponsabilite' => 'required|unique:responsabilites|max:255',
 
-                'abattement'=> 'required|unique:responsabilites'
+                'abattement'=> 'required|numeric|min:2'
 
             ]);
                $Responsabilite = new Responsabilite();
@@ -208,6 +209,71 @@ class Enseignant extends Controller
           $Responsabilite = Responsabilite::findOrFail($id);
           $Responsabilite->delete();
           return redirect('/ListResponsabilite');
+      }
+
+
+
+      //========================= Attribution ============================
+      public function Attribution()
+      {
+        $Permanent = Permanent::whereNull('attribution_id')->get();
+        return view('Attributions.Attribution' ,compact('Permanent'));
+      }
+
+      public function ListeAttribution()
+      {
+        $Permanent = Permanent::whereNotNull('attribution_id')->get();
+        return view('Attributions.ListeAttribution' ,compact('Permanent'));
+      }
+
+      public function NewAttribution($id)
+      {
+        $Permanent = Permanent::findOrFail($id);
+        return view('Attributions.NewAttribution',compact('Permanent'));
+      }
+
+
+
+
+
+      public function AttributionRegister(Request $request , $id)
+      {
+        $Permanent = Permanent::FindOrFail($id);
+        $Responsabilite = Responsabilite::findOrFail($request->idReponsabilite);
+        $typeAbattement = $Responsabilite['typeAbattement']; 
+        $abattement = $Responsabilite['abattement']; 
+        $request->validate([
+            'CoursMagistral' => 'required|numeric|min:2',
+
+            'TravauxDiriges'=> 'required|numeric|min:2'
+
+        ]);
+           $Attribution = new Attribution();
+           $Attribution->VH_CoursMagistral = $request->CoursMagistral;
+            $Attribution->VH_TravauxDiriges = $request->TravauxDiriges;
+            if ($typeAbattement == "Pourcentage(%)" )
+             {
+                    if ($abattement == 0) 
+                    {
+                        $Attribution->CM_ApresAbattement =  $request->CoursMagistral;
+                        $Attribution->TD_ApresAbattement =  $request->TravauxDiriges;
+                    } 
+                    else
+                     {
+                        $Attribution->CM_ApresAbattement = ($request->CoursMagistral * $abattement) / 100 ;
+                        $Attribution->TD_ApresAbattement = ($request->TravauxDiriges * $abattement) / 100 ;
+                    }
+            }
+            else
+            {
+                $Attribution->CM_ApresAbattement = ($request->CoursMagistral - $abattement) ;
+                $Attribution->TD_ApresAbattement = ($request->TravauxDiriges - $abattement) ;
+            }
+            
+           $Attribution->save();
+           $Permanent->attribution_id = $Attribution->id;
+           $Permanent->update();
+            return redirect('/Attribution')->with('Message','enregistrement a été effectué avec succès') ;
       }
 
    

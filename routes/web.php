@@ -178,12 +178,14 @@ Route::get('DeletResponsabilite/{id}',[Enseignant::class,'DeletGrade'])->name('d
 
 
                     // ============ Attribution ===============
-Route::get('Attribution',[ActivitePedagogiqueController::class ,'Attribution'])->name('attribution');
-Route::get('ListeAttribution',[ActivitePedagogiqueController::class ,'ListeAttribution'])->name('listeAttribution');
-Route::get('EditAttribution',[ActivitePedagogiqueController::class ,'EditAttribution'])->name('editAttribution');
-Route::get('DeletAttribution',[ActivitePedagogiqueController::class ,'DeletAttribution'])->name('deletAttribution');
-// Route::Post('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
-//Route::post('EcueRegister',[EtablissementController::class,'EcueRegister'])->name('EcueRegister');
+
+Route::get('Attribution',[Enseignant::class ,'Attribution'])->name('attribution');
+Route::get('NewAttribution/{id}',[Enseignant::class ,'NewAttribution'])->name('newAttribution');
+Route::get('ListeAttribution/',[Enseignant::class ,'ListeAttribution'])->name('listeAttribution');
+Route::get('EditAttribution',[Enseignant::class ,'EditAttribution'])->name('editAttribution');
+Route::Post('AttributionRegister/{id}',[Enseignant::class,'AttributionRegister'])->name('attributionRegister');
+Route::get('ListeAttribution',[Enseignant::class ,'ListeAttribution'])->name('listeAttribution');
+//Route::post('EcueRegister',[Enseignant::class,'EcueRegister'])->name('EcueRegister');
 
 
 

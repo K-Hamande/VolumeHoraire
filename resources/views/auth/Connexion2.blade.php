@@ -23,9 +23,6 @@
   <!-- Session Status -->
   <x-auth-session-status class="mb-4" :status="session('status')" />
 
-  <!-- Validation Errors -->
-  <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
     <div class="login-form-bg h-100">
         <div class="container h-100">
             <div class="row justify-content-center h-100">
@@ -35,14 +32,18 @@
                             <div class="card-body pt-5">
         
                                 <form class="mt-5 mb-5 login-input" method="POST" action="{{ route('login') }}">
+                                    @csrf
                                     <div class="form-group">
-                                        <input type="email" class="form-control @error('email') is-invalid  @enderror "" placeholder="Email" value="{{old('email')}}"    >
+                                        <input type="email"  name="email" class="form-control @error('email') is-invalid  @enderror " placeholder="Email" value="{{old('email')}}" >
+                                    </div>
+                                    <div class="input-group-append custom">
+                                        <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
                                     </div>
                                 @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                     <div class="form-group">
-                                        <input type="password" class="form-control @error('password') is-invalid  @enderror "" placeholder="Password">
+                                        <input type="password" name="password" class="form-control @error('password') is-invalid  @enderror " placeholder="Password">
                                     </div>
                                 @error('password')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -52,7 +53,7 @@
                                     <div class="flex items-center justify-end mt-4">
                                         @if (Route::has('password.request'))
                                             <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                                                {{ __('Forgot your password?') }}
+                                                {{ __('Mot de passe oublié ?') }}
                                             </a>
                                         @endif
                         

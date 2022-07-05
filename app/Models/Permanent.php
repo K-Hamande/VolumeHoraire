@@ -12,7 +12,7 @@ class Permanent extends Model
     use HasFactory;
     protected $table = 'permanents';
     protected $filable = [
-    "nom","prenom","telephone","matricule","email","ufr_id","grade_id","responsabilite_id",
+    "nom","prenom","telephone","matricule","email","ufr_id","grade_id","responsabilite_id", "attribution_id",
     ];
 
     public function grade():BelongsTo

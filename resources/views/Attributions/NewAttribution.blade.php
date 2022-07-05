@@ -58,27 +58,20 @@
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{Route('Accueil')}}">Accueil</a></li>
-                        <li class="breadcrumb-item active"><a href="{{Route('listResponsabilite')}}">liste des Responsabilites</a></li>
+                        <li class="breadcrumb-item"><a href="{{Route('Accueil')}}"><i class="icon-copy fa fa-home" aria-hidden="true"></i>Accueil</a></li>
+                        <li class="breadcrumb-item active"><a href="{{Route('listGrade')}}">liste des attribution</a></li>
                     </ol>
                 </div>
             </div>
             <!-- row -->
 
-            <div class="row">
-                <div class="col lg-2"></div>
-
-                @if (session('Message'))
-                <div   class="alert alert-success text-center">
-                    <div class="col lg-8">
-                        {{session('Message')}}
-                    </div>
+            @if (session('Message'))
+            <div   class="alert alert-success text-center">
+                <div class="col lg-8">
+                    {{session('Message')}}
                 </div>
-                @endif
-
-                <div class="col lg-2"></div>
             </div>
-           
+            @endif
 
             <div class="container-fluid">
                 <div class="row">
@@ -86,40 +79,48 @@
                     <div class="col-lg-8 mt-4">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title" style="text-align: center"> RESPONSABILITE ENSEIGNANTS </h4>
-                                <form action=" {{Route('responsabiliteRegister')}} " id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <h4 class="card-title" style="text-align: center"> ATTRIBUTION DE VOLUME HORAIRE  Á   {{ Str::of($Permanent->nom)->upper() }} {{$Permanent->prenom }} </h4>
+                                <form action=" {{Route('attributionRegister',['id'=>$Permanent->id])}} " id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
                                             <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <input type="text" name="intituleResponsabilite" class="form-control @error('intituleResponsabilite') is-invalid @enderror" placeholder="Responsabilite"  value="{{ old('intituleResponsabilite') }}">
-                                                    </div>
-                                                    @error('intituleResponsabilite')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
-                                                    @enderror
-
-                                                </div>
-
-                                                    <div class="col-lg-12">
+                                               
+                                                    <div class="col-lg-6">
                                                         <div class="form-group">
-                                                            <label>Type d’abattement horaire:</label>
-                                                            <select class="form-control" id="sel1" name="type">
-                                                                <option> Nombre d'heure </option>
-                                                                <option> Pourcentage(%)</option>
-                                                            </select>
+                                                            <label for="">Responsabilité</label>
+                                                            <input type="text" disabled class="form-control" value="{{$Permanent->responsabilite->intituleResponsabilite}}" >
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-12">
+                                                    <div class="col-lg-6">
                                                         <div class="form-group">
-                                                            <label></label>
-                                                            <input type="number" name="abattement" class="form-control  @error('abattement') is-invalid @enderror" placeholder="abattement horaire"  value="{{ old('abattement')}}">
-                                                        </div>   
-                                                @error('abattement')
+                                                            <label for="">Grade</label>
+                                                            <input type="text" disabled  class="form-control" value="{{$Permanent->grade->intituleGrade}} ">
+                                                        </div>
+                                                        
+                                                    </div>
+                                              
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="number" name="CoursMagistral" class="form-control @error('CoursMagistral') is-invalid  @enderror" placeholder="Cour Magistral "  value="{{ old('CoursMagistral')}}">
+                                                    </div>
+                                                @error('CoursMagistral')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="number" name="TravauxDiriges" class="form-control @error('TravauxDiriges') is-invalid  @enderror" placeholder="Travaux Pratique" value="{{ old('TravauxDiriges')}}" >
                                                     </div>
+                                                @error('TravauxDiriges')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
+                                                </div>
+
+                                                
+                                                <div class="form-group">
+                                                    <input type="text" name="idReponsabilite" hidden class="form-control" value="{{$Permanent->responsabilite->id}}" >
+                                                </div>
                                             </div>
                                         </section>
                                     <div class="row">

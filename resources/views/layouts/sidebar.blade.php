@@ -4,21 +4,13 @@
                 <ul class="metismenu" id="menu">
                     
                     <li class="nav-label">
-                        <a href="{{Route('Accueil')}}"> <i class="icon-copy fa fa-dashboard" aria-hidden="true"></i> ACCUEIL </a>
+                        <a href="{{Route('Accueil')}}"> <i class="icon-copy fa fa-home" aria-hidden="true"></i> ACCUEIL </a>
                     </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">{{ Auth::user()->pseudo }}</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="#"> Role </a></li>
-                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
-                        </ul>
-                    </li>
+                  
 
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-copy fa fa-briefcase"></i> <span class="nav-text"> Attribution</span>
+                            <i class="icon-copy fa fa-sitemap" aria-hidden="true"></i><span class="nav-text"> Attribution</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a a href="{{Route('attribution')}}">Nouvelle Attribution</a></li>
@@ -37,7 +29,7 @@
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-copy fa fa-briefcase"></i> <span class="nav-text"> Formation</span>
+                            <i class="icon-copy fa fa-mortar-board" aria-hidden="true"></i> <span class="nav-text"> Formation</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{Route('addFormationList')}}">Nouvelle Formation</a></li>
@@ -47,7 +39,7 @@
 
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow"" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Enseignants</span>
+                            <i class="icon-copy fa fa-vcard" aria-hidden="true"></i><span class="nav-text">Enseignants</span>
                         </a>
                         <ul aria-expanded="false">
                             <li>
@@ -68,7 +60,7 @@
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow"" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Délegués</span>
+                            <i class="icon-copy fa fa-group" aria-hidden="true"></i><span class="nav-text">Délegués</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{Route('enseignantActivite')}}">Enregistrement</a></li>
@@ -79,7 +71,7 @@
 
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow"" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Parametrage</span>
+                            <i class="icon-copy fa fa-gears" aria-hidden="true"></i><span class="nav-text">Parametrage</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{Route('createUser')}}">Utilisateur</a></li>
