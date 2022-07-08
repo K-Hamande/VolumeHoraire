@@ -63,11 +63,11 @@
                             <a href=" {{Route('activiteProgrammer')}} ">
 
                                 <div class="card-body">
-                                    <h3 class="card-title text-white">Activité Pédagogique</h3>
+                                    <h3 class="card-title text-white">ACTIVITES</h3>
                                     <div class="d-inline-block">
-                                        <h2 class="text-white">4565</h2>
+                                        <h2 class="text-white">0</h2>
                                     </div>
-                                    <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
+                                    <span class="float-right display-5 opacity-5"><i class="fa fa-tasks"></i></span>
                                 </div>
 
 
@@ -78,12 +78,13 @@
                         <div class="card gradient-2">
                             <a href="{{Route('listEtablissement')}}">
                                 <div class="card-body">
-                                    <h3 class="card-title text-white">UFR(s) et Instituts</h3>
+                                    <h3 class="card-title text-white">UFR(s) ET INSTITUTS</h3>
                                     <div class="d-inline-block">
                                         <h2 class="text-white">{{$Etablissement->count()}}</h2>
                                     </div>
-                                    <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                                    <span class="float-right display-5 opacity-5"><i class="fa fa-university"></i></span>
                                 </div>
+                               
                             </div>
                             </a>
                     </div>
@@ -92,10 +93,11 @@
                         <div class="card gradient-3">
                                 <a href=" {{Route('user')}} ">
                                     <div class="card-body">
-                                            <h3 class="card-title text-white">Utilisateurs</h3>
+                                            <h3 class="card-title text-white">UTILISATEUR</h3>
                                             <div class="d-inline-block">
                                             <h2 class="text-white">{{ $User->count()}}</h2>
                                     </div>
+                                    
                                     <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
                                 </div>
                                </a>
@@ -108,12 +110,14 @@
                            <a href=" {{Route('listeEnseignant')}} ">
 
                             <div class="card-body">
-                                <h3 class="card-title text-white">Enseignants</h3>
+                                <h3 class="card-title text-white"> ENSEIGNANTS </h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">99%</h2>
+                                    <h2 class="text-white">{{$Permanent->count()}}</h2>
                                 </div>
-                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-user"></i></span>
+                                
                             </div>
+
 
                            </a>
                         </div>

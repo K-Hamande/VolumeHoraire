@@ -2,6 +2,8 @@
 
 use App\Models\Ufr;
 use App\Models\User;
+use App\Models\Permanent;
+use App\Models\Vacataire;
 use App\Http\Controllers\Enseignant;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -26,9 +28,10 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 Route::get('/', function () {
     $User = User::all();
     $Etablissement = Ufr::all();
-    //$Enseinant = User::all();
+    $Permanent = Permanent::all();
+    $Vacataire = Vacataire::all();
     //$Activite = Ufr::all();
-    return view('pages.dashboard',compact('User','Etablissement'));
+    return view('pages.dashboard',compact('User','Etablissement','Permanent','Vacataire'));
 })->middleware(['auth'])->name('Accueil');
 
 require __DIR__.'/auth.php';
@@ -140,11 +143,17 @@ Route::get('DeletActivite',[ActivitePedagogiqueController::class,'DeletActivite'
 Route::get('Permanent',[Enseignant::class ,'Permanent'])->name('permanent');
 Route::post('PermanentRegister',[Enseignant::class,'PermanentRegister'])->name('permanentRegister');
 Route::get('ListeEnseignant',[Enseignant::class ,'ListeEnseignant'])->name('listeEnseignant');
+Route::post('UpdatPermanent/{id}',[EtablissementController::class,'UpdatPermanent'])->name('updatPermanent');
+Route::get('DeletPermanent/{id}',[EtablissementController::class,'DeletPermanent'])->name('deletPermanent');
+Route::get('DetailPermanent/{id}',[EtablissementController::class,'DetailPermanent'])->name('detailPermanent');
 
 
                         // ====== Enseigants  Vacataire =======
 Route::get('Vacataire',[Enseignant::class ,'Vacataire'])->name('vacataire');
 Route::post('VacataireRegister',[Enseignant::class,'VacataireRegister'])->name('vacataireRegister');
+Route::post('UpdatVacataire/{id}',[EtablissementController::class,'UpdatVacataire'])->name('updatVacataire');
+Route::get('DeletVacataire/{id}',[EtablissementController::class,'DeletVacataire'])->name('deletVacataire');
+Route::get('DetailVacataire/{id}',[EtablissementController::class,'DetailVacataire'])->name('detailVacataire');
 
 Route::get('EnseignantActivite',[Enseignant::class ,'EnseignantActivite'])->name('enseignantActivite');
 // Route::post('UserRegister',[EtablissementController::class,'Create'])->name('CreateUser');
@@ -181,6 +190,7 @@ Route::get('DeletResponsabilite/{id}',[Enseignant::class,'DeletGrade'])->name('d
 
 Route::get('Attribution',[Enseignant::class ,'Attribution'])->name('attribution');
 Route::get('NewAttribution/{id}',[Enseignant::class ,'NewAttribution'])->name('newAttribution');
+Route::get('DetailAttribution/{id}',[Enseignant::class ,'DetailAttribution'])->name('detailAttribution');
 Route::get('ListeAttribution/',[Enseignant::class ,'ListeAttribution'])->name('listeAttribution');
 Route::get('EditAttribution',[Enseignant::class ,'EditAttribution'])->name('editAttribution');
 Route::Post('AttributionRegister/{id}',[Enseignant::class,'AttributionRegister'])->name('attributionRegister');

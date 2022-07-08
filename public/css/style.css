@@ -25,16 +25,16 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 @import url(../plugins/metismenu/css/metisMenu.min.css);
 @import url(../plugins/bootstrap-select/dist/css/bootstrap-select.min.css);
 .gradient-1, .dropdown-mega-menu .ext-link.link-1 a, .morris-hover, .datamaps-hoverover {
-  background-image: linear-gradient(230deg, #759bff, #843cf6); }
+  background-image: linear-gradient(230deg, #00c0ef, #00c0ef); }
 
 .gradient-2, .dropdown-mega-menu .ext-link.link-3 a {
-  background-image: linear-gradient(230deg, #fc5286, #fbaaa2); }
+  background-image: linear-gradient(230deg, #00a65a, #00a65a); }
 
 .gradient-3, .dropdown-mega-menu .ext-link.link-2 a, .header-right .icons .user-img .activity {
-  background-image: linear-gradient(230deg, #ffc480, #ff763b); }
+  background-image: linear-gradient(230deg, #dd4b39, #dd4b39); }
 
 .gradient-4, .sidebar-right .nav-tabs .nav-item .nav-link.active::after, .sidebar-right .nav-tabs .nav-item .nav-link.active span i::before {
-  background-image: linear-gradient(230deg, #0e4cfd, #6a8eff); }
+  background-image: linear-gradient(230deg, #f39c12, #f39c12); }
 
 .gradient-5 {
   background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%); }
@@ -7587,7 +7587,7 @@ sub {
   position: absolute;
   left: 0;
   top: 0;
-  background: #111B27;
+  background-color: #1f5f2d;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
   transition: all .2s ease; }
   .nav-header .logo-abbr {
@@ -14010,7 +14010,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   padding-right: 15rem; }
 
 [data-nav-headerbg="color_1"] .nav-header {
-  background-color: #7571f9; }
+  background-color: #00a65a}
 
 [data-nav-headerbg="color_2"] .nav-header {
   background-color: #27394F !important; }
@@ -14700,3 +14700,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
       color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
+
+.app-name{
+  background-color: #1f5f2d;
+}

@@ -36,9 +36,7 @@
                                     <div class="form-group">
                                         <input type="email"  name="email" class="form-control @error('email') is-invalid  @enderror " placeholder="Email" value="{{old('email')}}" >
                                     </div>
-                                    <div class="input-group-append custom">
-                                        <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
-                                    </div>
+                                   
                                 @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
@@ -48,7 +46,18 @@
                                 @error('password')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                    <button class="btn login-form__btn submit w-100">Se Connecter</button>
+
+                                
+                                    <button class="btn login-form__btn submit w-100 mb-2">Se Connecter</button>
+
+                                    <div class="form-group">
+                                        <div class="form-check mb-3">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="remember">Se Souvenir de Moi 
+                                            </label>
+                                        </div>
+
+                                    </div>
 
                                     <div class="flex items-center justify-end mt-4">
                                         @if (Route::has('password.request'))

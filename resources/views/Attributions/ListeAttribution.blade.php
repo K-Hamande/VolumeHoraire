@@ -66,7 +66,7 @@
                                             <thead>
                                                 <tr>
                                                     
-                                                    <th>Nom</th>
+                                                     <th>Nom</th> 
                                                     <th>Prénom(s)</th>
                                                     <th>Matricule </th>
                                                     <th>Grade</th>
@@ -96,7 +96,7 @@
                                                         <span> {{$Permanents->responsabilite->intituleResponsabilite}} </span>
                                                     </td>
                                                         <td> 
-                                                            <a href="{{Route('newAttribution',['id'=>$Permanents->id])}}"> <button type="button" class="btn btn-info">Voir</button> </a>
+                                                            <a href="{{Route('detailAttribution',['id'=>$Permanents->id])}}"> <button type="button" class="btn btn-info">Voir</button> </a>
                                                           
                                                     </td>
                                                 </tr>

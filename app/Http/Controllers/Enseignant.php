@@ -107,6 +107,68 @@ class Enseignant extends Controller
         return view('Enseignants.EnseignantActivite');
     }
 
+    public function EditVacataire($id)
+     {
+          $Vacataire = Vacataire::findOrFail($id);
+          return view('Enseignants.EditVacataire',compact('Vacataire'));
+     }
+   
+    public function DetailVacataire($id)
+     {
+          $Vacataire = Vacataire::findOrFail($id);
+          return view('Enseignants.DetailVacataire',compact('Vacataire'));
+     }
+   
+   
+      public function UpdatVacataire(Request $request ,$id)
+      {
+          $Vacataire =  Vacataire::findOrFail($id);
+          $Vacataire->intituleVacataire = $request->intitule;
+          $Vacataire->update();
+     
+          return redirect('/ListVacataire');
+      }
+
+      public function DeletVacataire($id)
+      {
+          $Vacataire = Vacataire::findOrFail($id);
+          $Vacataire->delete();
+          return redirect('/ListVacataire');
+      }
+
+
+
+
+    public function DetailPermanent($id)
+     {
+          $Permanent = Permanent::findOrFail($id);
+          return view('Enseignants.DetailPermanent',compact('Permanent'));
+     }
+    public function EditPermanent($id)
+     {
+          $Permanent = Permanent::findOrFail($id);
+          return view('Enseignants.EditPermanent',compact('Permanent'));
+     }
+   
+   
+      public function UpdatPermanent(Request $request ,$id)
+      {
+          $Permanent =  Permanent::findOrFail($id);
+          $Permanent->intitulePermanent = $request->intitule;
+          $Permanent->update();
+     
+          return redirect('/ListPermanent');
+      }
+
+      public function DeletPermanent($id)
+      {
+          $Permanent = Permanent::findOrFail($id);
+          $Permanent->delete();
+          return redirect('/ListPermanent');
+      }
+
+
+
 
 
           // ==================== Grade ===============
@@ -232,6 +294,13 @@ class Enseignant extends Controller
         return view('Attributions.NewAttribution',compact('Permanent'));
       }
 
+      public function DetailAttribution($id)
+      {
+        $Attribution = Attribution::findOrFail($id);
+        $Permanent = Permanent::findOrFail($id);
+        return view('Attributions.DetailAttribution',compact('Attribution','Permanent',));
+      }
+
 
 
 
@@ -269,7 +338,9 @@ class Enseignant extends Controller
                 $Attribution->CM_ApresAbattement = ($request->CoursMagistral - $abattement) ;
                 $Attribution->TD_ApresAbattement = ($request->TravauxDiriges - $abattement) ;
             }
-            
+            $Attribution->Estimation = $Attribution->CM_ApresAbattement + $Attribution->TD_ApresAbattement;
+            $Attribution->VTD_confie = 0 ;
+            $Attribution->VCM_confie = 0 ;
            $Attribution->save();
            $Permanent->attribution_id = $Attribution->id;
            $Permanent->update();

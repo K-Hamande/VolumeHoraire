@@ -25,4 +25,9 @@ class Permanent extends Model
     {
         return $this->belongsto(Responsabilite::class);
     }
+
+    public function attribution():BelongsTo
+    {
+        return $this->belongsTo(Attribution::class);;
+    }
 }

@@ -96,8 +96,8 @@
                                                         <span> {{$Permanents->responsabilite->intituleResponsabilite}} </span>
                                                     </td>
                                                         <td> 
-                                                            <a href=""> <button type="button" class="btn btn-info">Voir</button> </a>
-                                                            <a href=""> <button type="button" class="btn btn-warning">Modifier</button> </a>
+                                                            <a href="{{Route('detailPermanent',['id'=>$Permanentsss->id])}}"> <button type="button" class="btn btn-info">Voir</button> </a>
+                                                            <a href="{{Route('updatPermanent',['id'=>$Permanentsss->id])}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>
                                                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button>
                                                             <!-- Modal -->
                                                             <div class="modal fade" id="exampleModalCenter">
@@ -113,7 +113,7 @@
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-info" data-dismiss="modal">NON</button>
-                                                                        <a href="#"><button type="button" class="btn btn-danger">OUI</button></a>
+                                                                        <a href="{{Route('deletPermanent',['id'=>$Permanentsss->id])}}"><button type="button" class="btn btn-danger">OUI</button></a>
                                                                     </div>
                                                                             </form>
                                                                     </div>       
