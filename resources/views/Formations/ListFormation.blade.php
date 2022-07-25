@@ -96,19 +96,8 @@
                                                                      <span>{{$Values->annee->annee}}</</span>
                                                                 </td>
                                                                     <td> 
-                                                                        <div class="basic-dropdown">
-                                                                            <!-- Default dropright button -->
-                                                                            <div class="btn-group dropright mb-2">
-                                                                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Action</button>
-                                                                                <div class="dropdown-menu">
-                                                                                    <a class="dropdown-item btn btn-secondary" href="{{Route('addFormationUe',['id'=>$Values->id])}}">Administrer une UE </a> 
-                                                                                    <a class="dropdown-item btn btn-secondary" href="{{Route('editFormation',['id'=>$Values->id])}}"> Modifier </a>
-                                                                                    <a class="dropdown-item btn btn-secondary" href="#">Voir</a> 
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                </td>
-                                                                
+                                                                        <a href="{{Route('detailFormation',['id'=>$Values->id])}}"> <button type="button" class="btn btn-warning">Voir</button> </a>
+                                                                    </td>
                                                             </tr>
 
                                                         @endforeach

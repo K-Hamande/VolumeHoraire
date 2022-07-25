@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Ue;
 use App\Models\Ufr;
+use App\Models\Ecue;
 use App\Models\Annee;
 use App\Models\Niveau;
 use App\Models\Filiere;
 use App\Models\Formation;
+use App\Models\Permanent;
+use App\Models\Attribution;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -16,7 +19,11 @@ class ActivitePedagogiqueController extends Controller
 
     public function NouvelleActivite()
     {
-        return view('Activites.AjoutActivite');
+        $annee = Annee::all();
+        $Formation = Formation::all();
+        //dd($Formation);
+        $Permanent = Permanent::whereNotNull('attribution_id')->get();
+        return view('Activites.AjoutActivite',compact('annee','Permanent','Formation'));
     }
 
 
@@ -88,13 +95,19 @@ class ActivitePedagogiqueController extends Controller
     }
 
 
+    public function Detail($id)
+    {
+      $Attribution = Attribution::findOrFail($id);
+      $Permanent = Permanent::findOrFail($id);
+      return view('Attributions.Detail',compact('Attribution','Permanent',));
+    }
 
 
-    public function EditFormation($id)
+
+    public function DetailFormation($id)
     {
        $Formation = Formation::findOrFail($id);
-       
-       return view('Formations.EditFormation',compact('Formation'));
+       return view('Formations.DetailFormation',compact('Formation'));
     }
 
     public function UpdatFormation(Request $request ,$id)
@@ -120,7 +133,7 @@ class ActivitePedagogiqueController extends Controller
         $Ue = $request->ue;
         $Formation = Formation::findOrFail($id);
         $Formation->ues()->attach($Ue);
-        return redirect('/AddList');
+        return redirect('/ListFormation');
 
     }
 
@@ -149,7 +162,61 @@ public function ListeAttribution()
 
 
 
+//      // ==================== Responsabilite ===============
 
+//      public function Responsabilite()
+//      {
+      
+//          return view('Responsabilites.Responsabilite');
+//      }
+
+     
+
+//       public function ListResponsabilite()
+//        {
+//            $Liste =Responsabilite::all();
+//            return view('Responsabilites.ListResponsabilite',compact('Liste'));
+//        }
+
+//  public function ResponsabiliteRegister(Request $request)
+//      {
+
+//        $request->validate([
+//            'intituleResponsabilite' => 'required|unique:responsabilites|max:255',
+
+//            'abattement'=> 'required|numeric|min:2'
+
+//        ]);
+//           $Responsabilite = new TypeActivite();
+//           $Responsabilite->intituleResponsabilite = $request->intituleResponsabilite;
+//            $Responsabilite->typeAbattement = $request->type;
+//            $Responsabilite->abattement = $request->abattement;
+//           $Responsabilite->save();
+//            return redirect('/Responsabilite')->with('Message','enregistrement a été effectué avec succès') ;
+//       }
+
+// public function EditTypeActivite($id)
+// {
+//      $TypeActivite = TypeActivite::findOrFail($id);
+//      return view('TypeActivites.EditTypeActivite',compact('TypeActivite'));
+// }
+
+
+//  public function UpdatTypeActivite(Request $request ,$id)
+//  {
+//      $TypeActivite =  TypeActivite::findOrFail($id);
+//      $TypeActivite->intituleTypeActivite = $request->intitule;
+//      $TypeActivite->update();
+
+//      return redirect('/ListTypeActivite');
+//  }
+
+//  public function DeletTypeActivite($id)
+//  {
+//      $TypeActivite = TypeActivite::findOrFail($id);
+//      $TypeActivite->delete();
+//      return redirect('/ListTypeActivite');
+//  }
 
 
 }

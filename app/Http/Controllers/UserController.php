@@ -43,10 +43,10 @@ class UserController extends Controller
     $Role->save();
     $Users->save();
     $Users->Roles()->attach($Role);
-        return redirect('/Create');
+        return redirect('/UserRegister');
     } 
 
-    public function Create()
+    public function UserRegister()
     {
         $Ufr = Ufr::all();
         return view('pages.UserRegister',compact('Ufr'));

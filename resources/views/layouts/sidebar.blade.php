@@ -56,9 +56,10 @@
                             </li>
                             <li><a href="{{Route('listeEnseignant')}}">liste des Enseignant</a></li>
                             <li><a href="{{Route('responsabilite')}}"> Responsabilité Enseignant </a></li>
+                            <li><a href="{{Route('grade')}}">Grade Enseignant</a></li>
                         </ul>
                     </li>
-                    <li class="mega-menu mega-menu-sm">
+                    {{-- <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow"" aria-expanded="false">
                             <i class="icon-copy fa fa-group" aria-hidden="true"></i><span class="nav-text">Délegués</span>
                         </a>
@@ -67,7 +68,7 @@
                             <li><a href="{{Route('enseignantActivite')}}">Activité En cours </a></li>
                             
                         </ul>
-                    </li>
+                    </li> --}}
 
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow"" aria-expanded="false">
@@ -76,7 +77,6 @@
                         <ul aria-expanded="false">
                             <li><a href="{{Route('createUser')}}">Utilisateur</a></li>
                             <li><a href="{{Route('etablissement')}}">Etablissement</a></li>
-                            <li><a href="{{Route('grade')}}">Grade Enseignant</a></li>
                             <li><a href="{{Route('departement')}}">Département</a></li>
                             <li><a href="{{Route('filiere')}}">Filière</a></li>
                             <li><a href="{{Route('ue')}}">UE</a></li>

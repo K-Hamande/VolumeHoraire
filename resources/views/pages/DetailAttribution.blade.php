@@ -106,7 +106,7 @@
                                                     <td>Volume H Statutaire</td>
                                                     
                                                     <td style="text-align: right" >
-                                                        <span> {{$Permanent->attribution->VH_CoursMagistral}} CM ou  {{$Permanent->attribution->VH_TravauxDiriges}}  TD</span>
+                                                        <span> {{$Attribution->VH_CoursMagistral}} CM ou  {{$Attribution->VH_TravauxDiriges}}  TD</span>
                                                     </td>
                                                     
                                                 </tr>
@@ -127,56 +127,27 @@
                                                 <td>Volume H après abattement </td>
                                                 
                                                 <td style="text-align: right" >
-                                                    <span> {{$Permanent->attribution->CM_ApresAbattement}} CM  ou {{$Permanent->attribution->TD_ApresAbattement}} TD </span>
+                                                    <span> {{$Attribution->CM_ApresAbattement}} CM  ou {{$Attribution->TD_ApresAbattement}} TD </span>
                                                 </td>
                                                 
 
                                                 <tr>
                                                     <td>Volume confié en Cours Magistral</td>
                                                     <td style="text-align: right" >
-                                                        <span> {{$Permanent->attribution->VCM_confie}} </span>
+                                                        <span> {{$Attribution->VCM_confie}} </span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Volume confié en travaux Dirigés</td>
                                                     <td style="text-align: right" >
-                                                        <span> {{$Permanent->attribution->VTD_confie}} </span>
+                                                        <span> {{$Attribution->VTD_confie}} </span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Estimation du volume Horaire restant</td>
                                                     <td style="text-align: right" >
-                                                        <span> {{$Permanent->attribution->Estimation}} </span>
+                                                        <span> {{$Attribution->Estimation}} </span>
                                                     </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="{{Route('updatAttribution',['id'=>$Permanent->attribution->id])}}"> <button type="button" class="btn btn-warning">Modifier</button> </a>
-                                                    </td>
-                                                    <td style="text-align: right" >
-                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</button>
-                                                        <!-- Modal -->
-                                                        <div class="modal fade" id="exampleModalCenter">
-                                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h5 class="modal-title"> Suppression d'un utilisateur</h5>
-                                                                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                                                                        </button>
-                                                                    </div>
-                                                                    <div class="modal-body" style="color: red">
-                                                                        Voulez vous vraiment supprimer  ?
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-info" data-dismiss="modal">NON</button>
-                                                                    <a href="{{Route('updatAttribution',['id'=>$Permanent->attribution->id])}}"><button type="button" class="btn btn-danger">OUI</button></a>
-                                                                </div>
-                                                                        </form>
-                                                                </div>       
-                                                        </div>
-                                                        </div>
-                                                    </td>
-                            
                                                 </tr>
                                             
 
@@ -188,9 +159,9 @@
                             </div>
                         </div>                        
                     </div>
+                   
                 </div>
                
-
             </div>
             <div class="col-lg-2"></div>
         </div>

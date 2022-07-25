@@ -50,8 +50,6 @@
 
 
 
-
-
         <!--**********************************
             Content body start
         ***********************************-->
@@ -60,66 +58,73 @@
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{Route('Accueil')}} ">Accueil</a></li>
-                        <li class="breadcrumb-item active"><a href=" {{Route('listFormation')}} ">Liste des Formations</a></li>
+                        <li class="breadcrumb-item"><a href="{{Route('Accueil')}}">Accueil</a></li>
+                        <li class="breadcrumb-item active"><a href="{{Route('listType')}}">liste des types d'activité</a></li>
                     </ol>
                 </div>
             </div>
             <!-- row -->
 
+            <div class="row">
+                <div class="col lg-2"></div>
+
+                @if (session('Message'))
+                <div   class="alert alert-success text-center">
+                    <div class="col lg-8">
+                        {{session('Message')}}
+                    </div>
+                </div>
+                @endif
+
+                <div class="col lg-2"></div>
+            </div>
+           
+
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col lg-1"></div>
-                    <div class="col-lg-10 mt-4">
+                    <div class="col lg-2"></div>
+                    <div class="col-lg-8 mt-4">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title" style="text-align: center">Modifier une Formation </h4>
-                                <form action="{{ Route('updatFormation',['id'=>$Formation->id]) }}" id="step-form-horizontal" class="step-form-horizontal" method="post">
+                                <h4 class="card-title" style="text-align: center"> TYPE D'ACTIVITÉ </h4>
+                                <form action=" {{Route('typeRegister')}} " id="step-form-horizontal" class="step-form-horizontal" method="post">
                                     @csrf
                                     <div>
                                         <section>
                                             <div class="row">
-                                                
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="text" name="codeFormation" value="{{$Formation->codeFormation}}" class="form-control" placeholder="Code Formation"required>
+                                                        <input type="text" name="intituleTypeActivite" class="form-control @error('intituleTypeActivite') is-invalid @enderror" placeholder="Type d'Activite"  value="{{ old('intituleTypeActivite') }}">
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <input type="text" name="intituleFormation" value="{{$Formation->intituleFormation}}"class="form-control" placeholder="Intitulé Formation" required>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                    @error('intituleTypeActivite')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
                                         </section>
-                                    
-                                        <div class="row">
-
-                                                <div class="col-lg-4"></div>
-                                            <div class="col-lg-4">
-            
-                                                    <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">MODIFIER</button>
-                                            </div>
-
-                                            <div class="col-lg-4"></div>
-                                        <div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            
+                                        </div>
+                                        <div class="col-lg-4">
+        
+                                                <button type="submit" class="btn mb-4 btn-rounded btn-success" style="width: 100%">ENREGISTRER</button>
+                                        </div>
+                                        <div class="col-lg-4">
+                                        </div>
                                     </div>
-                                </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                   
                 </div>
-                <div class="col lg-1"></div>
-                
+                <div class="col lg-2"></div>
                 </div>
-            </div>
+            <!-- #/ container -->
         </div>
+
         <!--**********************************
             Content body end
         ***********************************-->
-       
+    
     </div>
     <!--**********************************
         Main wrapper end
